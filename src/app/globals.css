@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f6f1;
+  --foreground: #17171a;
+  --muted: #5a5a5a;
+  --card-bg: #ffffff;
+  --card-border: #e2e0d8;
+  --accent: #0e7c66;
+  --accent-soft: #d9efe9;
+  --accent-fg: #ffffff;
+  --stage-1: #ef6f3a;
+  --stage-2: #d9a209;
+  --stage-3: #4ca35e;
+  --stage-4: #0a8fb5;
+  --stage-5: #6e58e0;
+  --stage-6: #c84f9c;
+  --stage-7: #4b5563;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 14px 44px rgba(0, 0, 0, 0.18);
+  --radius: 10px;
+  --focus: #ffb020;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card-bg);
+  --color-card-border: var(--card-border);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-foreground: var(--accent-fg);
+  --color-stage-1: var(--stage-1);
+  --color-stage-2: var(--stage-2);
+  --color-stage-3: var(--stage-3);
+  --color-stage-4: var(--stage-4);
+  --color-stage-5: var(--stage-5);
+  --color-stage-6: var(--stage-6);
+  --color-stage-7: var(--stage-7);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --radius-card: var(--radius);
+  --shadow-card: var(--shadow);
+  --shadow-card-lg: var(--shadow-lg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #11141a;
+    --foreground: #ececec;
+    --muted: #b0b0b0;
+    --card-bg: #1c1f27;
+    --card-border: #33363f;
+    --accent: #5cd0b5;
+    --accent-soft: #1d3a34;
+    --accent-fg: #11141a;
+    --shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 14px 44px rgba(0, 0, 0, 0.6);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
