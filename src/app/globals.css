@@ -1,23 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f6f1;
+  --background: #f6f4ee;
   --foreground: #17171a;
-  --muted: #5a5a5a;
-  --card-bg: #ffffff;
-  --card-border: #e2e0d8;
-  --accent: #0e7c66;
-  --accent-soft: #d9efe9;
+  --muted: #5f5d57;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --card-border: #ddd8cb;
+  --accent: #0f7b67;
+  --accent-soft: #deefe8;
   --accent-fg: #ffffff;
-  --stage-1: #ef6f3a;
-  --stage-2: #d9a209;
-  --stage-3: #4ca35e;
-  --stage-4: #0a8fb5;
-  --stage-5: #6e58e0;
-  --stage-6: #c84f9c;
-  --stage-7: #4b5563;
-  --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 14px 44px rgba(0, 0, 0, 0.18);
+  --stage-1: #d96a42;
+  --stage-2: #c99612;
+  --stage-3: #4b9b5e;
+  --stage-4: #187fa2;
+  --stage-5: #6852d6;
+  --stage-6: #bb4f91;
+  --stage-7: #57606f;
+  --shadow: 0 10px 30px rgba(28, 24, 15, 0.08);
+  --shadow-lg: 0 20px 60px rgba(28, 24, 15, 0.16);
   --radius: 10px;
   --focus: #ffb020;
 }
@@ -49,14 +49,14 @@
   :root {
     --background: #11141a;
     --foreground: #ececec;
-    --muted: #b0b0b0;
-    --card-bg: #1c1f27;
-    --card-border: #33363f;
-    --accent: #5cd0b5;
-    --accent-soft: #1d3a34;
+    --muted: #b7b4ae;
+    --card-bg: rgba(28, 31, 39, 0.94);
+    --card-border: #353a45;
+    --accent: #63d3b8;
+    --accent-soft: #1f3d37;
     --accent-fg: #11141a;
-    --shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
-    --shadow-lg: 0 14px 44px rgba(0, 0, 0, 0.6);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.42);
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.56);
   }
 }
 
@@ -71,6 +71,9 @@ html {
 body {
   margin: 0;
   line-height: 1.55;
+  background:
+    radial-gradient(circle at top, rgba(15, 123, 103, 0.08), transparent 0 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0)) var(--background);
   -webkit-font-smoothing: antialiased;
 }
 

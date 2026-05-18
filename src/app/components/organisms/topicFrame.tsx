@@ -35,7 +35,7 @@ export const TopicFrame = ({
   const style: CSSProperties | undefined = !mobile && typeof left === "number" && typeof top === "number" ? { left, top } : undefined;
 
   const className = twMerge(
-    "fixed z-[100] max-h-[calc(100vh-32px)] w-[min(420px,calc(100vw-32px))] overflow-auto rounded-card border border-accent bg-card px-5 pb-4 pt-5 shadow-card-lg transition-all duration-150 ease-out motion-reduce:transition-none",
+    "fixed z-[100] max-h-[calc(100vh-32px)] w-[min(420px,calc(100vw-32px))] overflow-auto rounded-[22px] border border-card-border bg-card/96 px-5 pb-4 pt-5 shadow-card-lg ring-1 ring-black/4 backdrop-blur-sm transition-all duration-150 ease-out motion-reduce:transition-none",
     frameVisible && activeTopic ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-1 opacity-0",
     mobile && "bottom-4 left-4 right-4 top-auto w-auto max-w-none",
   );
@@ -56,14 +56,21 @@ export const TopicFrame = ({
     >
       {activeTopic && (
         <>
-          <Typography component="h3" id="frame-title" variant="headingSm" tone="accent" className="mb-1">
-            {activeTopic.title}
-          </Typography>
-          <Typography variant="label" tone="muted" className="mb-2 italic">
-            {activeTopic.sub}
-          </Typography>
+          <div className="mb-3 flex items-start justify-between gap-3 border-b border-card-border/80 pb-3">
+            <div>
+              <Typography component="h3" id="frame-title" variant="headingSm" tone="accent" className="mb-1">
+                {activeTopic.title}
+              </Typography>
+              <Typography variant="label" tone="muted" className="italic">
+                {activeTopic.sub}
+              </Typography>
+            </div>
+            <span className="rounded-full bg-accent-soft px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-accent">
+              {isPinned ? "Pinned" : "Preview"}
+            </span>
+          </div>
           <TopicSections topic={activeTopic} />
-          <Typography variant="caption" tone="muted" className="mt-3 border-t border-card-border pt-3">
+          <Typography variant="caption" tone="muted" className="mt-4 border-t border-card-border/80 pt-3">
             {pinHint}
           </Typography>
         </>
