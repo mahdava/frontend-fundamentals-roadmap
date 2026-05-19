@@ -55,6 +55,8 @@ export const TopicFrame = ({
       style={{ ...style, pointerEvents }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
+      onFocusCapture={onMouseEnter}
+      onBlurCapture={onMouseLeave}
     >
       {activeTopic && (
         <>

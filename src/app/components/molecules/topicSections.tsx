@@ -1,9 +1,28 @@
 import type { Topic } from "../../data/roadmapData";
+import { Link } from "../atoms/link";
 import { Typography } from "../atoms/typography";
 
 export interface TopicSectionsProps {
   topic: Topic;
 }
+
+const renderResourceItem = (item: string) => {
+  const match = item.match(/^(.*)\((https?:\/\/[^\s)]+)\)$/);
+
+  if (!match) return item;
+
+  const [, label, href] = match;
+  const text = label.trim().replace(/[-–—:]\s*$/, "");
+
+  return (
+    <>
+      {text}{" "}
+      <Link href={href} target="_blank" rel="noreferrer" className="underline decoration-accent/45 underline-offset-2 hover:text-accent">
+        link
+      </Link>
+    </>
+  );
+};
 
 export const TopicSections = ({ topic: { title, sections } }: TopicSectionsProps) => {
   return (
@@ -15,7 +34,7 @@ export const TopicSections = ({ topic: { title, sections } }: TopicSectionsProps
           </Typography>
           <ul className={section.isResources ? "resources" : undefined}>
             {section.items.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item}>{section.isResources ? renderResourceItem(item) : item}</li>
             ))}
           </ul>
         </section>
