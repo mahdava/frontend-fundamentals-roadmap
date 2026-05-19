@@ -24,7 +24,7 @@ export const stages: Stage[] = [
   {
     id: 0, anchor: "stage-0", tag: "Stage 0",
     title: "React in comparison to Vue",
-    desc: "A short orientation layer for developers coming from Vue, so the React mental model feels legible before the deeper roadmap begins.",
+    desc: "A quick orientation layer for people coming from Vue. The goal here is not to relearn frontend from scratch, but to translate your instincts: how React thinks about components, state, rendering, and composition, and where that differs from the Vue mental model.",
     topics: [
       {
         title: "Template thinking vs component functions",
@@ -112,7 +112,7 @@ export const stages: Stage[] = [
   {
     id: 1, anchor: "stage-1", tag: "Stage 1",
     title: "Functional programming foundations",
-    desc: "Modern React is unintelligible without these. Spend real time here — every later stage rests on these ideas.",
+    desc: "Modern React makes a lot more sense once these ideas stop feeling abstract. Immutability, pure functions, composition, and data transformation show up everywhere, so this stage is less theory detour and more learning the grammar the rest of the roadmap is written in.",
     topics: [
       {
         title: "Pure functions",
@@ -213,7 +213,7 @@ export const stages: Stage[] = [
   {
     id: 2, anchor: "stage-2", tag: "Stage 2",
     title: "Modern JavaScript & TypeScript",
-    desc: "JS has moved on since you last looked. Refresh the syntax, then add TypeScript — it's the lingua franca of modern React.",
+    desc: "If you haven’t looked closely at JavaScript in a while, this is the moment to catch up. Start with the modern language features React codebases actually use, then layer in TypeScript, which is now part of the everyday working vocabulary of frontend development.",
     topics: [
       {
         title: "Modern ES syntax",
@@ -306,7 +306,7 @@ export const stages: Stage[] = [
   {
     id: 3, anchor: "stage-3", tag: "Stage 3",
     title: "React, deeply",
-    desc: "Beyond 'I've made a few components' — the rendering model, hooks done right, and the patterns that make React feel coherent.",
+    desc: "This is the point where React stops being components and hooks and starts feeling coherent. Focus on the rendering model, state snapshots, effects, and the habits that separate code that merely works from code that stays understandable.",
     topics: [
       {
         title: "Components are functions",
@@ -444,7 +444,7 @@ export const stages: Stage[] = [
   {
     id: 4, anchor: "stage-4", tag: "Stage 4",
     title: "React architecture patterns",
-    desc: "How to keep components composable as the app grows — state placement, composition, context, forms.",
+    desc: "Once an app grows past a handful of components, local decisions start becoming architectural ones. This stage is about state placement, composition, context, forms, and the patterns that help a React codebase stay flexible instead of quietly turning brittle.",
     topics: [
       {
         title: "Composition over configuration",
@@ -550,7 +550,7 @@ export const stages: Stage[] = [
   {
     id: 5, anchor: "stage-5", tag: "Stage 5",
     title: "Client vs server components",
-    desc: "The biggest mental shift in modern React. Take your time — this is genuinely a new model, not just a new API.",
+    desc: "This is one of the biggest conceptual shifts in the React ecosystem. It’s not just a new feature to memorize, but a different way of thinking about where code runs, what gets shipped to the browser, and how responsibility is split across the app.",
     topics: [
       {
         title: "Why the split exists",
@@ -653,7 +653,7 @@ export const stages: Stage[] = [
   {
     id: 6, anchor: "stage-6", tag: "Stage 6",
     title: "Next.js",
-    desc: "The framework most React apps now sit in. Focus on the App Router; recognize the Pages Router when you see it in older code.",
+    desc: "For many developers, this is where React becomes a real application stack. Prioritize the App Router, understand the full-stack model it introduces, and learn just enough of the Pages Router to stay oriented when older codebases still rely on it.",
     topics: [
       {
         title: "App Router vs Pages Router",
@@ -771,7 +771,7 @@ export const stages: Stage[] = [
   {
     id: 7, anchor: "stage-7", tag: "Stage 7",
     title: "Adjacent essentials",
-    desc: "The supporting tech you'll touch almost every day — styling, client-side data, accessibility, testing, tooling.",
+    desc: "These are the tools and practices that quietly shape day-to-day frontend work: styling, accessibility, testing, client-side data fetching, and developer tooling. They are adjacent only in the sense that React doesn’t own them, not because they are optional.",
     topics: [
       {
         title: "Tailwind CSS",
