@@ -40,6 +40,8 @@ export const TopicFrame = ({
     mobile && "bottom-4 left-4 right-4 top-auto w-auto max-w-none",
   );
 
+  const pointerEvents = isPinned ? "auto" : undefined;
+
   return (
     <aside
       id="topic-frame"
@@ -50,7 +52,7 @@ export const TopicFrame = ({
       data-pinned={isPinned}
       tabIndex={-1}
       className={className}
-      style={style}
+      style={{ ...style, pointerEvents }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
