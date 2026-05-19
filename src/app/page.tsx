@@ -11,11 +11,11 @@ const Home = () => {
   const {
     activeTopic,
     activeKey,
-    frameVisible,
-    frameHint,
+    isOpen,
+    dialogHint,
     setButtonRef,
     toggleTopic,
-    setFrameOpen,
+    setDialogOpen,
   } = useTopicDialog();
 
   return (
@@ -43,9 +43,9 @@ const Home = () => {
 
       <TopicDetailsDialog
         activeTopic={activeTopic}
-        open={frameVisible}
-        hint={frameHint}
-        onOpenChange={setFrameOpen}
+        open={isOpen}
+        hint={dialogHint}
+        onOpenChange={setDialogOpen}
       />
     </div>
   );

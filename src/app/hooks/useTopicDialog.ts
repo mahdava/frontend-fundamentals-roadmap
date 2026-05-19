@@ -4,19 +4,19 @@ import type { Topic } from "../data/roadmapData";
 export interface UseTopicDialogResult {
   activeTopic: Topic | null;
   activeKey: string | null;
-  frameVisible: boolean;
-  frameHint: string;
+  isOpen: boolean;
+  dialogHint: string;
   setButtonRef: (key: string, node: HTMLButtonElement | null) => void;
   toggleTopic: (key: string, topic: Topic) => void;
-  setFrameOpen: (open: boolean) => void;
+  setDialogOpen: (open: boolean) => void;
 }
 
 export function useTopicDialog(): UseTopicDialogResult {
   const [activeTopic, setActiveTopic] = useState<Topic | null>(null);
   const [activeKey, setActiveKey] = useState<string | null>(null);
-  const [frameVisible, setFrameVisible] = useState(false);
+  const [isOpen, setFrameVisible] = useState(false);
 
-  const frameHint = activeKey
+  const dialogHint = activeKey
     ? "Open · Click the card again or press Esc to close"
     : "Click a card to open it · Esc to close";
 
@@ -24,13 +24,13 @@ export function useTopicDialog(): UseTopicDialogResult {
     // kept for the existing card API shape, no-op now that the UI uses a proper modal
   };
 
-  const clearFrame = () => {
+  const closeDialog = () => {
     setFrameVisible(false);
     setActiveTopic(null);
     setActiveKey(null);
   };
 
-  const showTopic = (key: string, topic: Topic) => {
+  const openTopic = (key: string, topic: Topic) => {
     setActiveKey(key);
     setActiveTopic(topic);
     setFrameVisible(true);
@@ -38,16 +38,16 @@ export function useTopicDialog(): UseTopicDialogResult {
 
   const toggleTopic = (key: string, topic: Topic) => {
     if (activeKey === key) {
-      clearFrame();
+      closeDialog();
       return;
     }
 
-    showTopic(key, topic);
+    openTopic(key, topic);
   };
 
-  const setFrameOpen = (open: boolean) => {
+  const setDialogOpen = (open: boolean) => {
     if (!open) {
-      clearFrame();
+      closeDialog();
       return;
     }
 
@@ -57,10 +57,10 @@ export function useTopicDialog(): UseTopicDialogResult {
   return {
     activeTopic,
     activeKey,
-    frameVisible,
-    frameHint,
+    isOpen,
+    dialogHint,
     setButtonRef,
     toggleTopic,
-    setFrameOpen,
+    setDialogOpen,
   };
 }
