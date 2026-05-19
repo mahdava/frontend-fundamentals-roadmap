@@ -2,22 +2,21 @@
 
 import { RoadmapHeader } from "./components/organisms/roadmapHeader";
 import { StageSection } from "./components/organisms/stageSection";
-import { TopicFrame } from "./components/organisms/topicFrame";
+import { TopicDetailsDialog } from "./components/molecules/topicDetailsDialog";
 import { stages } from "./data/roadmapData";
-import { useTopicFrame } from "./hooks/useTopicFrame";
+import { useTopicDialog } from "./hooks/useTopicDialog";
 import { focusClass } from "./lib/focusClass";
 
 const Home = () => {
   const {
     activeTopic,
     activeKey,
-    frameVisible,
-    framePos,
-    frameRef,
-    frameHint,
+    isOpen,
+    dialogHint,
     setButtonRef,
     toggleTopic,
-  } = useTopicFrame();
+    setDialogOpen,
+  } = useTopicDialog();
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
@@ -42,12 +41,11 @@ const Home = () => {
         ))}
       </main>
 
-      <TopicFrame
-        frameRef={frameRef}
+      <TopicDetailsDialog
         activeTopic={activeTopic}
-        frameVisible={frameVisible}
-        framePos={framePos}
-        frameHint={frameHint}
+        open={isOpen}
+        hint={dialogHint}
+        onOpenChange={setDialogOpen}
       />
     </div>
   );
