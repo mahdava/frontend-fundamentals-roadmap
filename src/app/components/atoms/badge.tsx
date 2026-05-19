@@ -1,6 +1,7 @@
 import { twMerge } from "tailwind-merge";
 
 const toneClassNames: Record<number, string> = {
+  0: "bg-foreground text-background",
   1: "bg-stage-1 text-white",
   2: "bg-stage-2 text-black",
   3: "bg-stage-3 text-white",
