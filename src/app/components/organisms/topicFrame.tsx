@@ -47,18 +47,13 @@ export const TopicFrame = ({
     >
       {activeTopic && (
         <>
-          <div className="mb-3 flex items-start justify-between gap-3 border-b border-card-border/80 pb-3">
-            <div>
-              <Typography component="h3" id="frame-title" variant="headingSm" tone="accent" className="mb-1">
-                {activeTopic.title}
-              </Typography>
-              <Typography variant="label" tone="muted" className="italic">
-                {activeTopic.sub}
-              </Typography>
-            </div>
-            <span className="rounded-full bg-accent-soft px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-accent">
-              Open
-            </span>
+          <div className="mb-3 border-b border-card-border/80 pb-3">
+            <Typography component="h3" id="frame-title" variant="headingSm" tone="accent" className="mb-1">
+              {activeTopic.title}
+            </Typography>
+            <Typography variant="label" tone="muted" className="italic">
+              {activeTopic.sub}
+            </Typography>
           </div>
           <TopicSections topic={activeTopic} />
           <Typography variant="caption" tone="muted" className="mt-4 border-t border-card-border/80 pt-3">

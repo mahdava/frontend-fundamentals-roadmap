@@ -22,8 +22,17 @@ export const TopicCard = ({ topic, topicKey, isPinned, setButtonRef, onPinToggle
 
   return (
     <Button isPinned={isPinned} setRef={setRef} onClick={handleClick}>
-      <span className="block text-base font-semibold">{topic.title}</span>
-      <span className="mt-0.5 block text-sm text-muted">{topic.hint}</span>
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0 flex-1">
+          <span className="block text-base font-semibold">{topic.title}</span>
+          <span className="mt-0.5 block text-sm text-muted">{topic.hint}</span>
+        </div>
+        {isPinned && (
+          <span className="shrink-0 rounded-full bg-accent-soft px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-accent">
+            Open
+          </span>
+        )}
+      </div>
     </Button>
   );
 };
