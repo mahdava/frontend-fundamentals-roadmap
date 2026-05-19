@@ -16,7 +16,6 @@ export interface UseTopicFrameResult {
   frameHint: string;
   setButtonRef: (key: string, node: HTMLButtonElement | null) => void;
   toggleTopic: (key: string, topic: Topic) => void;
-  hideTopic: () => void;
 }
 
 export function useTopicFrame(): UseTopicFrameResult {
@@ -92,10 +91,6 @@ export function useTopicFrame(): UseTopicFrameResult {
     requestAnimationFrame(() => positionFrame(button));
   };
 
-  const hideTopic = () => {
-    clearFrame();
-  };
-
   const toggleTopic = (key: string, topic: Topic) => {
     if (activeKey === key) {
       clearFrame();
@@ -155,6 +150,5 @@ export function useTopicFrame(): UseTopicFrameResult {
     frameHint,
     setButtonRef,
     toggleTopic,
-    hideTopic,
   };
 }
