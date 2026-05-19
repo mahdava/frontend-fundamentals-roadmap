@@ -14,11 +14,9 @@ const Home = () => {
     frameVisible,
     framePos,
     frameRef,
-    pinHint,
+    frameHint,
     setButtonRef,
     toggleTopic,
-    setHoverInside,
-    hideTopic,
   } = useTopicFrame();
 
   return (
@@ -49,13 +47,7 @@ const Home = () => {
         activeTopic={activeTopic}
         frameVisible={frameVisible}
         framePos={framePos}
-        pinHint={pinHint}
-        isPinned={Boolean(activeKey)}
-        onMouseEnter={() => setHoverInside(true)}
-        onMouseLeave={() => {
-          setHoverInside(false);
-          hideTopic();
-        }}
+        frameHint={frameHint}
       />
     </div>
   );

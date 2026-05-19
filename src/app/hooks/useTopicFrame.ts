@@ -13,17 +13,15 @@ export interface UseTopicFrameResult {
   frameVisible: boolean;
   framePos: TopicFramePosition;
   frameRef: React.RefObject<HTMLElement | null>;
-  pinHint: string;
+  frameHint: string;
   setButtonRef: (key: string, node: HTMLButtonElement | null) => void;
   toggleTopic: (key: string, topic: Topic) => void;
-  setHoverInside: (inside: boolean) => void;
   hideTopic: () => void;
 }
 
 export function useTopicFrame(): UseTopicFrameResult {
   const [activeTopic, setActiveTopic] = useState<Topic | null>(null);
   const [activeKey, setActiveKey] = useState<string | null>(null);
-  const [hoverInside, setHoverInside] = useState(false);
   const [frameVisible, setFrameVisible] = useState(false);
   const [framePos, setFramePos] = useState<TopicFramePosition>({});
 
@@ -31,7 +29,7 @@ export function useTopicFrame(): UseTopicFrameResult {
   const buttonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const activeButtonRef = useRef<HTMLButtonElement | null>(null);
 
-  const pinHint = activeKey
+  const frameHint = activeKey
     ? "Open · Click the card again or press Esc to close"
     : "Click a card to open it · Esc to close";
 
@@ -146,7 +144,7 @@ export function useTopicFrame(): UseTopicFrameResult {
       window.removeEventListener("resize", onResize);
       document.removeEventListener("click", onDocumentClick);
     };
-  }, [activeKey, frameVisible, hoverInside]);
+  }, [activeKey, frameVisible]);
 
   return {
     activeTopic,
@@ -154,10 +152,9 @@ export function useTopicFrame(): UseTopicFrameResult {
     frameVisible,
     framePos,
     frameRef,
-    pinHint,
+    frameHint,
     setButtonRef,
     toggleTopic,
-    setHoverInside,
     hideTopic,
   };
 }

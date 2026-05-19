@@ -15,10 +15,7 @@ export interface TopicFrameProps {
   activeTopic: Topic | null;
   frameVisible: boolean;
   framePos: TopicFramePosition;
-  pinHint: string;
-  isPinned: boolean;
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
+  frameHint: string;
 }
 
 export const TopicFrame = ({
@@ -26,10 +23,7 @@ export const TopicFrame = ({
   activeTopic,
   frameVisible,
   framePos,
-  pinHint,
-  isPinned,
-  onMouseEnter,
-  onMouseLeave,
+  frameHint,
 }: TopicFrameProps) => {
   const { mobile, left, top } = framePos;
   const style: CSSProperties | undefined = !mobile && typeof left === "number" && typeof top === "number" ? { left, top } : undefined;
@@ -40,8 +34,6 @@ export const TopicFrame = ({
     mobile && "bottom-4 left-4 right-4 top-auto w-auto max-w-none",
   );
 
-  const pointerEvents = isPinned ? "auto" : undefined;
-
   return (
     <aside
       id="topic-frame"
@@ -49,14 +41,9 @@ export const TopicFrame = ({
       role="complementary"
       aria-live="polite"
       aria-labelledby="frame-title"
-      data-pinned={isPinned}
       tabIndex={-1}
       className={className}
-      style={{ ...style, pointerEvents }}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      onFocusCapture={onMouseEnter}
-      onBlurCapture={onMouseLeave}
+      style={style}
     >
       {activeTopic && (
         <>
@@ -70,12 +57,12 @@ export const TopicFrame = ({
               </Typography>
             </div>
             <span className="rounded-full bg-accent-soft px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-accent">
-              {isPinned ? "Pinned" : "Preview"}
+              Open
             </span>
           </div>
           <TopicSections topic={activeTopic} />
           <Typography variant="caption" tone="muted" className="mt-4 border-t border-card-border/80 pt-3">
-            {pinHint}
+            {frameHint}
           </Typography>
         </>
       )}
