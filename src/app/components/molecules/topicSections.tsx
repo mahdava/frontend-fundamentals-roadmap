@@ -13,14 +13,19 @@ const renderResourceItem = (item: string) => {
 
   const [, label, href] = match;
   const text = label.trim().replace(/[-–—:]\s*$/, "");
+  const accessibleLabel = `${text} (opens in a new tab)`;
 
   return (
-    <>
-      {text}{" "}
-      <Link href={href} target="_blank" rel="noreferrer" className="underline decoration-accent/45 underline-offset-2 hover:text-accent">
-        link
-      </Link>
-    </>
+    <Link
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={accessibleLabel}
+      className="underline decoration-accent/45 underline-offset-2 hover:text-accent"
+    >
+      {text}
+      <span className="sr-only"> (opens in a new tab)</span>
+    </Link>
   );
 };
 
