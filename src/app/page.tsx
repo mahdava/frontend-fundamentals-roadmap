@@ -10,15 +10,13 @@ import { focusClass } from "./lib/focusClass";
 const Home = () => {
   const {
     activeTopic,
-    pinnedKey,
+    activeKey,
     frameVisible,
     framePos,
     frameRef,
     pinHint,
     setButtonRef,
-    showTopic,
-    hideTopicSoon,
-    togglePinnedTopic,
+    toggleTopic,
     setHoverInside,
     hideTopic,
   } = useTopicFrame();
@@ -39,11 +37,9 @@ const Home = () => {
           <StageSection
             key={stage.id}
             stage={stage}
-            pinnedKey={pinnedKey}
+            activeKey={activeKey}
             setButtonRef={setButtonRef}
-            onShow={showTopic}
-            onHideSoon={hideTopicSoon}
-            onPinToggle={togglePinnedTopic}
+            onPinToggle={toggleTopic}
           />
         ))}
       </main>
@@ -54,11 +50,11 @@ const Home = () => {
         frameVisible={frameVisible}
         framePos={framePos}
         pinHint={pinHint}
-        isPinned={Boolean(pinnedKey)}
+        isPinned={Boolean(activeKey)}
         onMouseEnter={() => setHoverInside(true)}
         onMouseLeave={() => {
           setHoverInside(false);
-          if (!pinnedKey) hideTopic();
+          hideTopic();
         }}
       />
     </div>
