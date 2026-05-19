@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import type { MouseEvent, ReactNode } from "react";
+import type { FocusEventHandler, MouseEvent, ReactNode } from "react";
 import { focusClass } from "../../lib/focusClass";
 
 export interface ButtonProps {
@@ -7,8 +7,8 @@ export interface ButtonProps {
   isPinned: boolean;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
-  onFocus: () => void;
-  onBlur: () => void;
+  onFocus: FocusEventHandler<HTMLButtonElement>;
+  onBlur: FocusEventHandler<HTMLButtonElement>;
   onClick: (event: MouseEvent<HTMLButtonElement>) => void;
   setRef: (node: HTMLButtonElement | null) => void;
 }
