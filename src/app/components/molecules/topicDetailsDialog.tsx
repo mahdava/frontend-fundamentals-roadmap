@@ -1,7 +1,7 @@
 "use client";
 
 import type { Topic } from "../../data/roadmapData";
-import { BaseDialog } from "../atoms/dialog";
+import { Dialog } from "../atoms/dialog";
 import { Typography } from "../atoms/typography";
 import { TopicSections } from "./topicSections";
 
@@ -19,7 +19,7 @@ export const TopicDetailsDialog = ({
   onOpenChange,
 }: TopicDetailsDialogProps) => {
   return (
-    <BaseDialog
+    <Dialog
       open={open}
       onOpenChange={onOpenChange}
       closeLabel="Close topic details"
@@ -44,6 +44,6 @@ export const TopicDetailsDialog = ({
           </Typography>
         </>
       ) : null}
-    </BaseDialog>
+    </Dialog>
   );
 };
