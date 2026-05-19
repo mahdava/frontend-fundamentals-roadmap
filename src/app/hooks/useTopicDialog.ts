@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { Topic } from "../data/roadmapData";
 
-export interface UseTopicFrameResult {
+export interface UseTopicDialogResult {
   activeTopic: Topic | null;
   activeKey: string | null;
   frameVisible: boolean;
@@ -11,7 +11,7 @@ export interface UseTopicFrameResult {
   setFrameOpen: (open: boolean) => void;
 }
 
-export function useTopicFrame(): UseTopicFrameResult {
+export function useTopicDialog(): UseTopicDialogResult {
   const [activeTopic, setActiveTopic] = useState<Topic | null>(null);
   const [activeKey, setActiveKey] = useState<string | null>(null);
   const [frameVisible, setFrameVisible] = useState(false);

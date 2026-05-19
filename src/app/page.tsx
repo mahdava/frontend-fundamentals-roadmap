@@ -4,7 +4,7 @@ import { RoadmapHeader } from "./components/organisms/roadmapHeader";
 import { StageSection } from "./components/organisms/stageSection";
 import { TopicDetailsDialog } from "./components/molecules/topicDetailsDialog";
 import { stages } from "./data/roadmapData";
-import { useTopicFrame } from "./hooks/useTopicFrame";
+import { useTopicDialog } from "./hooks/useTopicDialog";
 import { focusClass } from "./lib/focusClass";
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
     setButtonRef,
     toggleTopic,
     setFrameOpen,
-  } = useTopicFrame();
+  } = useTopicDialog();
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
