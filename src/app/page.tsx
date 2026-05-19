@@ -2,7 +2,7 @@
 
 import { RoadmapHeader } from "./components/organisms/roadmapHeader";
 import { StageSection } from "./components/organisms/stageSection";
-import { TopicFrame } from "./components/organisms/topicFrame";
+import { TopicDetailsDialog } from "./components/molecules/topicDetailsDialog";
 import { stages } from "./data/roadmapData";
 import { useTopicFrame } from "./hooks/useTopicFrame";
 import { focusClass } from "./lib/focusClass";
@@ -41,10 +41,10 @@ const Home = () => {
         ))}
       </main>
 
-      <TopicFrame
+      <TopicDetailsDialog
         activeTopic={activeTopic}
-        frameVisible={frameVisible}
-        frameHint={frameHint}
+        open={frameVisible}
+        hint={frameHint}
         onOpenChange={setFrameOpen}
       />
     </div>
