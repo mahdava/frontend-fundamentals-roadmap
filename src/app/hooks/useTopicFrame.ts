@@ -9,23 +9,18 @@ export interface TopicFramePosition {
 
 export interface UseTopicFrameResult {
   activeTopic: Topic | null;
-  pinnedKey: string | null;
+  activeKey: string | null;
   frameVisible: boolean;
   framePos: TopicFramePosition;
   frameRef: React.RefObject<HTMLElement | null>;
-  pinHint: string;
+  frameHint: string;
   setButtonRef: (key: string, node: HTMLButtonElement | null) => void;
-  showTopic: (key: string, topic: Topic) => void;
-  hideTopicSoon: () => void;
-  togglePinnedTopic: (key: string, topic: Topic) => void;
-  setHoverInside: (inside: boolean) => void;
-  hideTopic: () => void;
+  toggleTopic: (key: string, topic: Topic) => void;
 }
 
 export function useTopicFrame(): UseTopicFrameResult {
   const [activeTopic, setActiveTopic] = useState<Topic | null>(null);
-  const [pinnedKey, setPinnedKey] = useState<string | null>(null);
-  const [hoverInside, setHoverInside] = useState(false);
+  const [activeKey, setActiveKey] = useState<string | null>(null);
   const [frameVisible, setFrameVisible] = useState(false);
   const [framePos, setFramePos] = useState<TopicFramePosition>({});
 
@@ -33,9 +28,9 @@ export function useTopicFrame(): UseTopicFrameResult {
   const buttonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
   const activeButtonRef = useRef<HTMLButtonElement | null>(null);
 
-  const pinHint = pinnedKey
-    ? "Pinned · Click card again or press Esc to unpin"
-    : "Hovering · click the card to pin · Esc to close";
+  const frameHint = activeKey
+    ? "Open · Click the card again or press Esc to close"
+    : "Click a card to open it · Esc to close";
 
   const setButtonRef = (key: string, node: HTMLButtonElement | null) => {
     buttonRefs.current[key] = node;
@@ -44,6 +39,7 @@ export function useTopicFrame(): UseTopicFrameResult {
   const clearFrame = () => {
     setFrameVisible(false);
     setActiveTopic(null);
+    setActiveKey(null);
     activeButtonRef.current = null;
   };
 
@@ -89,43 +85,26 @@ export function useTopicFrame(): UseTopicFrameResult {
     if (!button) return;
 
     activeButtonRef.current = button;
+    setActiveKey(key);
     setActiveTopic(topic);
     setFrameVisible(true);
     requestAnimationFrame(() => positionFrame(button));
   };
 
-  const hideTopic = () => {
-    if (pinnedKey) return;
-    clearFrame();
-  };
-
-  const hideTopicSoon = () => {
-    window.setTimeout(() => {
-      const frameHasFocus = frameRef.current?.contains(document.activeElement) ?? false;
-
-      if (!hoverInside && !pinnedKey && !frameHasFocus) {
-        clearFrame();
-      }
-    }, 80);
-  };
-
-  const togglePinnedTopic = (key: string, topic: Topic) => {
-    if (pinnedKey === key) {
-      setPinnedKey(null);
+  const toggleTopic = (key: string, topic: Topic) => {
+    if (activeKey === key) {
       clearFrame();
       return;
     }
 
-    setPinnedKey(key);
     showTopic(key, topic);
   };
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key !== "Escape") return;
-      if (pinnedKey) {
-        const button = buttonRefs.current[pinnedKey];
-        setPinnedKey(null);
+      if (activeKey) {
+        const button = buttonRefs.current[activeKey];
         clearFrame();
         button?.focus();
         return;
@@ -140,15 +119,14 @@ export function useTopicFrame(): UseTopicFrameResult {
     };
 
     const onDocumentClick = ({ target }: MouseEvent) => {
-      if (!pinnedKey) return;
+      if (!activeKey) return;
 
       const frame = frameRef.current;
-      const button = buttonRefs.current[pinnedKey];
+      const button = buttonRefs.current[activeKey];
       const node = target as Node | null;
 
       if (frame?.contains(node) || button?.contains(node)) return;
 
-      setPinnedKey(null);
       clearFrame();
     };
 
@@ -161,20 +139,16 @@ export function useTopicFrame(): UseTopicFrameResult {
       window.removeEventListener("resize", onResize);
       document.removeEventListener("click", onDocumentClick);
     };
-  }, [frameVisible, pinnedKey]);
+  }, [activeKey, frameVisible]);
 
   return {
     activeTopic,
-    pinnedKey,
+    activeKey,
     frameVisible,
     framePos,
     frameRef,
-    pinHint,
+    frameHint,
     setButtonRef,
-    showTopic,
-    hideTopicSoon,
-    togglePinnedTopic,
-    setHoverInside,
-    hideTopic,
+    toggleTopic,
   };
 }

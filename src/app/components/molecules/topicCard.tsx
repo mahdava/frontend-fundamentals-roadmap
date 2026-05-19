@@ -1,4 +1,4 @@
-import type { FocusEvent, MouseEvent } from "react";
+import type { MouseEvent } from "react";
 import type { Topic } from "../../data/roadmapData";
 import { Button } from "../atoms/button";
 
@@ -6,51 +6,13 @@ export interface TopicCardProps {
   topic: Topic;
   topicKey: string;
   isPinned: boolean;
-  isInteractionLocked: boolean;
   setButtonRef: (key: string, node: HTMLButtonElement | null) => void;
-  onShow: (key: string, topic: Topic) => void;
-  onHideSoon: () => void;
   onPinToggle: (key: string, topic: Topic) => void;
 }
 
-export const TopicCard = ({
-  topic,
-  topicKey,
-  isPinned,
-  isInteractionLocked,
-  setButtonRef,
-  onShow,
-  onHideSoon,
-  onPinToggle,
-}: TopicCardProps) => {
+export const TopicCard = ({ topic, topicKey, isPinned, setButtonRef, onPinToggle }: TopicCardProps) => {
   const setRef = (node: HTMLButtonElement | null) => {
     setButtonRef(topicKey, node);
-  };
-
-  const showTopic = () => {
-    onShow(topicKey, topic);
-  };
-
-  const handleMouseEnter = () => {
-    if (isInteractionLocked) return;
-    showTopic();
-  };
-
-  const handleMouseLeave = () => {
-    if (isInteractionLocked) return;
-    onHideSoon();
-  };
-
-  const handleFocus = () => {
-    if (isInteractionLocked && !isPinned) return;
-    showTopic();
-  };
-
-  const handleBlur = ({ relatedTarget }: FocusEvent<HTMLButtonElement>) => {
-    if (isInteractionLocked) return;
-    if (relatedTarget instanceof HTMLButtonElement) return;
-
-    onHideSoon();
   };
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
@@ -59,17 +21,18 @@ export const TopicCard = ({
   };
 
   return (
-    <Button
-      isPinned={isPinned}
-      setRef={setRef}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
-      onClick={handleClick}
-    >
-      <span className="block text-base font-semibold">{topic.title}</span>
-      <span className="mt-0.5 block text-sm text-muted">{topic.hint}</span>
+    <Button isPinned={isPinned} setRef={setRef} onClick={handleClick}>
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0 flex-1">
+          <span className="block text-base font-semibold">{topic.title}</span>
+          <span className="mt-0.5 block text-sm text-muted">{topic.hint}</span>
+        </div>
+        {isPinned && (
+          <span className="shrink-0 rounded-full bg-accent-soft px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-accent">
+            Open
+          </span>
+        )}
+      </div>
     </Button>
   );
 };
