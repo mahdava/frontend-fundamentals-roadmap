@@ -12,11 +12,10 @@ const Home = () => {
     activeTopic,
     activeKey,
     frameVisible,
-    framePos,
-    frameRef,
     frameHint,
     setButtonRef,
     toggleTopic,
+    setFrameOpen,
   } = useTopicFrame();
 
   return (
@@ -43,11 +42,10 @@ const Home = () => {
       </main>
 
       <TopicFrame
-        frameRef={frameRef}
         activeTopic={activeTopic}
         frameVisible={frameVisible}
-        framePos={framePos}
         frameHint={frameHint}
+        onOpenChange={setFrameOpen}
       />
     </div>
   );
