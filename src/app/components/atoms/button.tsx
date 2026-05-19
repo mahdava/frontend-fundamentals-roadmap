@@ -24,9 +24,9 @@ export const Button = ({
   setRef,
 }: ButtonProps) => {
   const className = twMerge(
-    `relative rounded-card border bg-card p-4 text-left transition duration-150 ease-out motion-reduce:transition-none hover:-translate-y-px hover:border-accent hover:shadow-card motion-reduce:hover:translate-y-0 ${focusClass}`,
+    `cursor-pointer rounded-[18px] border bg-card p-4 text-left transition-colors duration-150 ease-out motion-reduce:transition-none hover:border-accent/45 hover:bg-accent-soft/40 ${focusClass}`,
     isPinned
-      ? "border-accent bg-accent-soft shadow-card"
+      ? "border-accent/70 bg-accent-soft"
       : "border-card-border",
   );
 
@@ -44,7 +44,7 @@ export const Button = ({
       onBlur={onBlur}
       onClick={onClick}
     >
-      {children}
+      <span className="block">{children}</span>
     </button>
   );
 };

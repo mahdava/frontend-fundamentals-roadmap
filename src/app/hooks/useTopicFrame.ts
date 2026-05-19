@@ -101,7 +101,9 @@ export function useTopicFrame(): UseTopicFrameResult {
 
   const hideTopicSoon = () => {
     window.setTimeout(() => {
-      if (!hoverInside && !pinnedKey) {
+      const frameHasFocus = frameRef.current?.contains(document.activeElement) ?? false;
+
+      if (!hoverInside && !pinnedKey && !frameHasFocus) {
         clearFrame();
       }
     }, 80);
