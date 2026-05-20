@@ -42,7 +42,8 @@ export const stages: Stage[] = [
  ]},
  { h: "Where to learn", isResources: true, items: [
  "React docs - Writing markup with JSX (https://react.dev/learn/writing-markup-with-jsx)",
- "Vue docs - Template syntax (https://vuejs.org/guide/essentials/template-syntax.html)"
+ "Vue docs - Template syntax (https://vuejs.org/guide/essentials/template-syntax.html)",
+ "Reddit discussion - Moving from Vue to React (https://www.reddit.com/r/webdev/comments/1n6ocid/moving_from_vue_to_react/)"
  ]}
  ]
  },
