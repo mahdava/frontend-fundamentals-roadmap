@@ -1,6 +1,6 @@
 import type { MouseEvent } from "react";
 import type { Topic } from "../../data/roadmapData";
-import { Button } from "../atoms/button";
+import { CardButton } from "./cardButton";
 
 export interface TopicCardProps {
   topic: Topic;
@@ -16,7 +16,7 @@ export const TopicCard = ({ topic, topicKey, isPinned, onPinToggle }: TopicCardP
   };
 
   return (
-    <Button isPinned={isPinned} onClick={handleClick}>
+    <CardButton isPinned={isPinned} onClick={handleClick}>
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">
           <span className="block text-base font-semibold">{topic.title}</span>
@@ -28,6 +28,6 @@ export const TopicCard = ({ topic, topicKey, isPinned, onPinToggle }: TopicCardP
           </span>
         )}
       </div>
-    </Button>
+    </CardButton>
   );
 };
