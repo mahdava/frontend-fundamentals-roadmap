@@ -1,5 +1,6 @@
 import type { Topic } from "../../data/roadmapData";
 import { Link } from "../atoms/link";
+import { MarkdownText } from "../atoms/markdownText";
 import { Typography } from "../atoms/typography";
 
 export interface TopicSectionsProps {
@@ -9,11 +10,10 @@ export interface TopicSectionsProps {
 const renderResourceItem = (item: string) => {
   const match = item.match(/^(.*)\((https?:\/\/[^\s)]+)\)$/);
 
-  if (!match) return item;
+  if (!match) return <MarkdownText content={item} />;
 
   const [, label, href] = match;
-  const text = label.trim().replace(/[-–—:]\s*$/, "");
-  const accessibleLabel = `${text} (opens in a new tab)`;
+  const accessibleLabel = `${label.trim().replace(/[*_-]/g, "")} (opens in a new tab)`;
 
   return (
     <Link
@@ -23,7 +23,7 @@ const renderResourceItem = (item: string) => {
       aria-label={accessibleLabel}
       className="underline decoration-accent/45 underline-offset-2 hover:text-accent"
     >
-      {text}
+      <MarkdownText content={label.trim().replace(/[-–—:]\s*$/, "")} />
       <span className="sr-only"> (opens in a new tab)</span>
     </Link>
   );
@@ -39,7 +39,7 @@ export const TopicSections = ({ topic: { title, sections } }: TopicSectionsProps
           </Typography>
           <ul className={section.isResources ? "resources list-disc marker:text-accent" : "list-disc marker:text-accent"}>
             {section.items.map((item) => (
-              <li key={item}>{section.isResources ? renderResourceItem(item) : item}</li>
+              <li key={item}>{section.isResources ? renderResourceItem(item) : <MarkdownText content={item} />}</li>
             ))}
           </ul>
         </section>
