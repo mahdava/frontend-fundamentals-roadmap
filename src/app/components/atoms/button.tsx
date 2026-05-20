@@ -8,7 +8,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = ({ children, type = "button", className, ...props }: ButtonProps) => {
   return (
-    <button type={type} className={twMerge(focusClass, className)} {...props}>
+    <button type={type} className={twMerge("cursor-pointer", focusClass, className)} {...props}>
       {children}
     </button>
   );
