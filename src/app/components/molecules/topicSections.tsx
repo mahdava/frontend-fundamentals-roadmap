@@ -37,9 +37,7 @@ export const TopicSections = ({ topic: { title, sections } }: TopicSectionsProps
           <Typography component="h4" variant="eyebrow" tone="muted" className="mb-1 mt-4">
             {section.h}
           </Typography>
-          <ul
-            className={section.isResources ? "resources list-disc marker:text-accent" : "list-disc marker:text-foreground/70"}
-          >
+          <ul className={section.isResources ? "resources list-disc marker:text-accent" : "list-disc marker:text-accent"}>
             {section.items.map((item) => (
               <li key={item}>{section.isResources ? renderResourceItem(item) : item}</li>
             ))}
