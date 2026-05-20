@@ -105,6 +105,7 @@ export const stages: Stage[] = [
  "React docs - You might not need an effect (https://react.dev/learn/you-might-not-need-an-effect)",
  "React docs - Synchronizing with Effects (https://react.dev/learn/synchronizing-with-effects)",
  "React docs - Removing Effect Dependencies (https://react.dev/learn/removing-effect-dependencies)",
+ "Oh No - Performance optimization with useMemo (https://www.oh-no.ooo/articles/performance-optimization-with-usememo)",
  "Vue docs - Computed properties (https://vuejs.org/guide/essentials/computed.html)",
  "Vue docs - Watchers (https://vuejs.org/guide/essentials/watchers.html)"
  ]}
