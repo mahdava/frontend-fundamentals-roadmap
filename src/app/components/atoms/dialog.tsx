@@ -3,6 +3,7 @@
 import * as RadixDialog from "@radix-ui/react-dialog";
 import { twMerge } from "tailwind-merge";
 import type { ReactNode } from "react";
+import { Button } from "./button";
 
 export interface DialogProps {
   open: boolean;
@@ -40,13 +41,9 @@ export const Dialog = ({
               {description ? <RadixDialog.Description asChild>{description}</RadixDialog.Description> : null}
             </div>
             <RadixDialog.Close asChild>
-              <button
-                type="button"
-                className="shrink-0 rounded-full border border-card-border px-3 py-1.5 text-sm text-muted transition-colors hover:border-accent/45 hover:text-foreground"
-                aria-label={closeLabel}
-              >
+              <Button variant="secondary" aria-label={closeLabel}>
                 Close
-              </button>
+              </Button>
             </RadixDialog.Close>
           </div>
 
