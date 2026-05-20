@@ -29,15 +29,15 @@ export const stages: Stage[] = [
  {
  title: "Template thinking vs component functions",
  hint: "Templates versus JSX",
- sub: "**Vue** separates template and script more explicitly, while **React** leans on JavaScript as the view language.",
+ sub: "Vue separates template and script more explicitly, while React leans on JavaScript as the view language.",
  sections: [
  { h: "What matters here", items: [
- "**Vue** templates are declarative HTML-like syntax with directives, while **React** uses **JSX** (*JavaScript XML*) inside component functions",
- "In **React**, control flow and rendering logic live in JavaScript rather than special template syntax",
- "**JSX** is not a template layer bolted on top, it is the *primary rendering model*",
- "In **React**, rendering is just JavaScript returning UI, not a separate template language with extra rules",
- "**JSX** looks like HTML, but it behaves like JavaScript expressions stitched into a component function",
- "**React** rewards comfort with *plain JavaScript control flow* more than memorizing framework directives"
+ "Vue templates are declarative HTML-like syntax with directives, while React uses JSX inside component functions",
+ "In React, control flow and rendering logic live in JavaScript rather than special template syntax",
+ "JSX is not a template layer bolted on top, it is the *primary rendering model*",
+ "In React, rendering is just JavaScript returning UI, not a separate template language with extra rules",
+ "JSX looks like HTML, but it behaves like JavaScript expressions stitched into a component function",
+ "React rewards comfort with *plain JavaScript control flow* more than memorizing framework directives"
  ]},
  { h: "Things worth asking", items: [
  "What feels clearer in JSX than in templates?",
@@ -57,15 +57,15 @@ export const stages: Stage[] = [
  {
  title: "Reactivity vs re-rendering",
  hint: "Fine-grained tracking versus state-driven renders",
- sub: "**Vue**'s reactivity system tracks dependencies differently from **React**'s render cycle and state updates.",
+ sub: "Vue's reactivity system tracks dependencies differently from React's render cycle and state updates.",
  sections: [
  { h: "What matters here", items: [
- "**Vue** tracks reactive dependencies and updates consumers automatically",
- "**React** re-renders components when state or props change, then reconciles the UI from that new tree",
- "**React**'s model makes *render purity* and immutability more central to day-to-day work",
- "**React** does not watch individual properties in the **Vue** sense, it re-runs components and compares results",
- "A render in **React** is cheap and expected, not automatically a sign that something went wrong",
- "The key discipline in **React** is not tracking dependencies manually, but keeping renders pure and state immutable"
+ "Vue tracks reactive dependencies and updates consumers automatically",
+ "React re-renders components when state or props change, then reconciles the UI from that new tree",
+ "React's model makes *render purity* and immutability more central to day-to-day work",
+ "React does not watch individual properties in the Vue sense, it re-runs components and compares results",
+ "A render in React is cheap and expected, not automatically a sign that something went wrong",
+ "The key discipline in React is not tracking dependencies manually, but keeping renders pure and state immutable"
  ]},
  { h: "Things worth asking", items: [
  "Why does direct mutation feel more tolerated in Vue than in React?",
@@ -85,13 +85,13 @@ export const stages: Stage[] = [
  {
  title: "Computed and watchers vs derived state and effects",
  hint: "Different tools, similar problems",
- sub: "A lot of **Vue** experience transfers, but the **React** equivalents live in different places and have different constraints.",
+ sub: "A lot of Vue experience transfers, but the React equivalents live in different places and have different constraints.",
  sections: [
  { h: "What matters here", items: [
- "**Vue** computed values map loosely to derived values in **React**, often just plain expressions or memoized values when needed",
- "**Vue** watchers map loosely to *useEffect*, but *useEffect* is not a generic reaction tool for everything",
- "In **React**, if something can be derived during render, it usually should be",
- "In **React**, many values that would become computed in **Vue** are just ordinary variables derived during render",
+ "Vue computed values map loosely to derived values in React, often just plain expressions or memoized values when needed",
+ "Vue watchers map loosely to *useEffect*, but *useEffect* is not a generic reaction tool for everything",
+ "In React, if something can be derived during render, it usually should be",
+ "In React, many values that would become computed in Vue are just ordinary variables derived during render",
  "Effects are for *synchronizing with the outside world*, not for expressing every relationship between values",
  "If you reach for an effect too quickly, you often end up modeling data flow in a more fragile way"
  ]},
@@ -114,15 +114,15 @@ export const stages: Stage[] = [
  {
  title: "Slots, children, and composition",
  hint: "Different reuse mechanisms",
- sub: "**Vue** and **React** both care about composition, but they package it differently. This is where a lot of framework intuition gets translated.",
+ sub: "Vue and React both care about composition, but they package it differently. This is where a lot of framework intuition gets translated.",
  sections: [
  { h: "What matters here", items: [
- "**Vue** slots and **React** children solve similar composition problems with different ergonomics",
- "**React** often prefers composition through children, props, and plain JavaScript patterns over framework-specific template features",
- "Understanding this shift makes **React** component APIs feel much less arbitrary",
- "**React** component APIs often feel more like *function design* than template design",
- "Named slots in **Vue** often become explicit props that accept **JSX** or components in **React**",
- "**React** composition tends to be more flexible, but also asks you to design cleaner APIs yourself"
+ "Vue slots and React children solve similar composition problems with different ergonomics",
+ "React often prefers composition through children, props, and plain JavaScript patterns over framework-specific template features",
+ "Understanding this shift makes React component APIs feel much less arbitrary",
+ "React component APIs often feel more like *function design* than template design",
+ "Named slots in Vue often become explicit props that accept JSX or components in React",
+ "React composition tends to be more flexible, but also asks you to design cleaner APIs yourself"
  ]},
  { h: "Things worth asking", items: [
  "When does a slot map neatly to children, and when does it need a different API shape?",
@@ -142,15 +142,15 @@ export const stages: Stage[] = [
  {
  title: "Single-file components vs composition through modules",
  hint: "SFC ergonomics versus JS-native composition",
- sub: "**Vue** gives you a strong file format convention, while **React** tends to compose through plain modules and conventions around them.",
+ sub: "Vue gives you a strong file format convention, while React tends to compose through plain modules and conventions around them.",
  sections: [
  { h: "What matters here", items: [
- "**Vue** SFCs bundle template, script, and style into one unit",
- "**React** projects often split or combine files based on team preference, since the model is more convention-driven",
- "The **React** ecosystem rewards comfort with JavaScript modules more than comfort with framework-specific file structure",
- "**React** gives you fewer file-shape opinions, so *team conventions* matter more",
- "Reuse in **React** often happens through functions, hooks, and modules rather than framework-specific file primitives",
- "The absence of **SFCs** is not a missing feature so much as a different tradeoff"
+ "Vue SFCs bundle template, script, and style into one unit",
+ "React projects often split or combine files based on team preference, since the model is more convention-driven",
+ "The React ecosystem rewards comfort with JavaScript modules more than comfort with framework-specific file structure",
+ "React gives you fewer file-shape opinions, so *team conventions* matter more",
+ "Reuse in React often happens through functions, hooks, and modules rather than framework-specific file primitives",
+ "The absence of SFCs is not a missing feature so much as a different tradeoff"
  ]},
  { h: "Things worth asking", items: [
  "What do you lose and gain when the framework is less opinionated about file shape?",
