@@ -6,10 +6,9 @@ export interface ButtonProps {
   children: ReactNode;
   isPinned: boolean;
   onClick: (event: MouseEvent<HTMLButtonElement>) => void;
-  setRef: (node: HTMLButtonElement | null) => void;
 }
 
-export const Button = ({ children, isPinned, onClick, setRef }: ButtonProps) => {
+export const Button = ({ children, isPinned, onClick }: ButtonProps) => {
   const className = twMerge(
     `cursor-pointer rounded-[18px] border bg-card p-4 text-left transition-colors duration-150 ease-out motion-reduce:transition-none hover:border-accent/45 hover:bg-accent-soft/40 ${focusClass}`,
     isPinned
@@ -19,7 +18,6 @@ export const Button = ({ children, isPinned, onClick, setRef }: ButtonProps) => 
 
   return (
     <button
-      ref={setRef}
       type="button"
       aria-expanded={isPinned}
       aria-haspopup="true"

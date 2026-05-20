@@ -6,18 +6,12 @@ import { Typography } from "../atoms/typography";
 import { TopicSections } from "./topicSections";
 
 export interface TopicDetailsDialogProps {
-  activeTopic: Topic | null;
+  topic: Topic;
   open: boolean;
-  hint: string;
   onOpenChange: (open: boolean) => void;
 }
 
-export const TopicDetailsDialog = ({
-  activeTopic,
-  open,
-  hint,
-  onOpenChange,
-}: TopicDetailsDialogProps) => {
+export const TopicDetailsDialog = ({ topic, open, onOpenChange }: TopicDetailsDialogProps) => {
   return (
     <Dialog
       open={open}
@@ -25,18 +19,16 @@ export const TopicDetailsDialog = ({
       closeLabel="Close topic details"
       title={
         <Typography component="h3" variant="headingSm" tone="accent" className="mb-1">
-          {activeTopic?.title ?? "Topic details"}
+          {topic.title}
         </Typography>
       }
       description={
-        activeTopic ? (
-          <Typography variant="label" tone="muted" className="italic">
-            {activeTopic.sub}
-          </Typography>
-        ) : undefined
+        <Typography variant="label" tone="muted" className="italic">
+          {topic.sub}
+        </Typography>
       }
     >
-      {activeTopic ? <TopicSections topic={activeTopic} /> : null}
+      <TopicSections topic={topic} />
     </Dialog>
   );
 };
