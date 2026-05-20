@@ -32,12 +32,11 @@ export const stages: Stage[] = [
  sub: "Vue separates template and script more explicitly, while React leans on JavaScript as the view language.",
  sections: [
  { h: "What matters here", items: [
- "Vue templates are declarative HTML-like syntax with directives, while React uses JSX inside component functions",
+ "Vue templates are declarative HTML-like syntax with directives, while **React uses JSX (JavaScript XML) inside component functions**",
  "In React, control flow and rendering logic live in JavaScript rather than special template syntax",
- "JSX is not a template layer bolted on top, it is the *primary rendering model*",
- "In React, rendering is just JavaScript returning UI, not a separate template language with extra rules",
- "JSX looks like HTML, but it behaves like JavaScript expressions stitched into a component function",
- "React rewards comfort with *plain JavaScript control flow* more than memorizing framework directives"
+ "**JSX** is not a template layer bolted on top, it **is the primary rendering model**",
+ "In React, **rendering is just JavaScript returning UI**, not a separate template language with extra rules",
+ "JSX *looks* like HTML, but it behaves like JavaScript expressions stitched into a component function"
  ]},
  { h: "Things worth asking", items: [
  "What feels clearer in JSX than in templates?",
