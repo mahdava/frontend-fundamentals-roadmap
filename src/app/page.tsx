@@ -8,15 +8,7 @@ import { useTopicDialog } from "./hooks/useTopicDialog";
 import { focusClass } from "./lib/focusClass";
 
 const Home = () => {
-  const {
-    activeTopic,
-    activeKey,
-    isOpen,
-    dialogHint,
-    setButtonRef,
-    toggleTopic,
-    setDialogOpen,
-  } = useTopicDialog();
+  const { selectedTopic, activeKey, toggleTopic, closeDialog } = useTopicDialog();
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
@@ -31,22 +23,13 @@ const Home = () => {
 
       <main id="main" className="mx-auto max-w-[980px] px-6 pb-20 pt-4">
         {stages.map((stage) => (
-          <StageSection
-            key={stage.id}
-            stage={stage}
-            activeKey={activeKey}
-            setButtonRef={setButtonRef}
-            onPinToggle={toggleTopic}
-          />
+          <StageSection key={stage.id} stage={stage} activeKey={activeKey} onPinToggle={toggleTopic} />
         ))}
       </main>
 
-      <TopicDetailsDialog
-        activeTopic={activeTopic}
-        open={isOpen}
-        hint={dialogHint}
-        onOpenChange={setDialogOpen}
-      />
+      {selectedTopic ? (
+        <TopicDetailsDialog topic={selectedTopic.topic} open onOpenChange={(open) => !open && closeDialog()} />
+      ) : null}
     </div>
   );
 };
