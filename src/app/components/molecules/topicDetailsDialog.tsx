@@ -36,14 +36,7 @@ export const TopicDetailsDialog = ({
         ) : undefined
       }
     >
-      {activeTopic ? (
-        <>
-          <TopicSections topic={activeTopic} />
-          <Typography variant="caption" tone="muted" className="mt-4 border-t border-card-border/80 pt-3">
-            {hint}
-          </Typography>
-        </>
-      ) : null}
+      {activeTopic ? <TopicSections topic={activeTopic} /> : null}
     </Dialog>
   );
 };
