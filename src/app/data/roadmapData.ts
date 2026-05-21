@@ -87,12 +87,12 @@ export const stages: Stage[] = [
  sub: "A lot of Vue experience transfers, but the React equivalents live in different places and have different constraints.",
  sections: [
  { h: "What matters here", items: [
- "Vue computed values map loosely to derived values in React, often just plain expressions or memoized values when needed",
- "Vue watchers map loosely to *useEffect*, but *useEffect* is not a generic reaction tool for everything",
+ "Vue computed values often become plain derived values in React, and only sometimes need memoization",
+ "**Vue watchers map loosely to useEffect**, but useEffect is not a generic reaction tool for everything",
  "In React, if something can be derived during render, it usually should be",
  "In React, many values that would become computed in Vue are just ordinary variables derived during render",
- "Effects are for *synchronizing with the outside world*, not for expressing every relationship between values",
- "If you reach for an effect too quickly, you often end up modeling data flow in a more fragile way"
+ "Effects are mainly for syncing with things outside React",
+ "If you use an effect too early, the code often gets harder to reason about"
  ]},
  { h: "Things worth asking", items: [
  "When is useMemo actually needed, and when is it premature?",
