@@ -178,7 +178,7 @@ export const stages: Stage[] = [
  sub: "If you want a broader map alongside this one, roadmap.sh is a strong companion.",
  sections: [
  { h: "What matters here", items: [
- "I couldn't possibly come with a better roadmap than the ones in roadmap.sh, but together with it I can highlight the topics that deserve attention"
+ "roadmap.sh already does a great job mapping the territory, and I am trying to help by highlighting other important topics too"
  ]},
  { h: "Further reading", isResources: true, items: [
  "roadmap.sh - React roadmap (https://roadmap.sh/react)"
