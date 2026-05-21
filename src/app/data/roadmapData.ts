@@ -272,10 +272,9 @@ export const stages: Stage[] = [
  sub: "How hooks remember state, and the cause of a surprising number of React bugs.",
  sections: [
  { h: "What matters here", items: [
- "A closure is a function plus the variables it captured when it was created",
+ "**A closure is a function plus the variables it captured when it was created**",
  "Every render creates new function values that close over that render's values",
- "The stale closure problem appears when a callback sees older values than you expected",
- "This is one of the ideas that makes hooks feel strange until it suddenly clicks"
+ "**The stale closure problem appears when a callback sees older values than you expected**"
  ]},
  { h: "Things worth asking", items: [
  "Why does a setTimeout inside a component often log old state?",
