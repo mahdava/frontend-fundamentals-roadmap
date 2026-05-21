@@ -173,19 +173,6 @@ export const stages: Stage[] = [
  desc: "Modern React makes much more sense once these ideas stop feeling abstract. This stage is less a theory detour and more a practical introduction to the patterns React leans on every day.",
  topics: [
  {
- title: "The best React roadmap",
- hint: "A practical companion",
- sub: "If you want a broader map alongside this one, roadmap.sh is a strong companion.",
- sections: [
- { h: "What matters here", items: [
- "roadmap.sh already does a great job mapping the territory, and I am trying to help by highlighting other important topics too"
- ]},
- { h: "Further reading", isResources: true, items: [
- "roadmap.sh - React roadmap (https://roadmap.sh/react)"
- ]}
- ]
- },
- {
  title: "Pure functions",
  hint: "Same input, same output",
  sub: "The atom of functional programming, and the shape of every React component.",
@@ -258,20 +245,20 @@ export const stages: Stage[] = [
  {
  title: "Higher-order functions",
  hint: "Functions as values",
- sub: "Once functions are values, programs become pipelines.",
+ sub: "This is mostly about understanding why callbacks and array transforms feel so natural in React code.",
  sections: [
  { h: "What matters here", items: [
- "Functions can be passed as arguments and returned from other functions",
- "map, filter, and reduce replace a lot of low-level looping",
- "Composition lets you build bigger behavior from smaller units",
- "This is less about sounding functional and more about writing transformations that stay readable"
+ "**Functions in JavaScript can be treated like values**",
+ "That means you can pass them around, return them, and reuse them in different places",
+ "This is why callbacks are everywhere in React",
+ "Methods like **map** and **filter** help you transform data without messy loops"
  ]},
  { h: "Things worth asking", items: [
- "When is reduce the right answer, and when is it overkill?",
- "What does currying actually buy you?"
+ "Why does React code rely so heavily on callbacks?",
+ "When do array methods make code clearer than a manual loop?"
  ]},
  { h: "Signs it’s clicking", items: [
- "You write transformations as pipelines instead of loops with mutable accumulators"
+ "You start seeing callbacks and array transforms as normal building blocks, not special tricks"
  ]},
  { h: "Further reading", isResources: true, items: [
  "MDN - Array methods (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)",
@@ -423,6 +410,19 @@ export const stages: Stage[] = [
  title: "React, deeply",
  desc: "This is where React stops being components and hooks and starts feeling coherent. Focus on the rendering model, state snapshots, effects, and the habits that separate code that merely works from code that stays understandable.",
  topics: [
+ {
+ title: "The best React roadmap",
+ hint: "A practical companion",
+ sub: "If you want a broader map alongside this one, roadmap.sh is a strong companion.",
+ sections: [
+ { h: "What matters here", items: [
+ "roadmap.sh already does a great job mapping the territory, and I am trying to help by highlighting other important topics too"
+ ]},
+ { h: "Further reading", isResources: true, items: [
+ "roadmap.sh - React roadmap (https://roadmap.sh/react)"
+ ]}
+ ]
+ },
  {
  title: "Components are functions",
  hint: "JSX returns a description",
