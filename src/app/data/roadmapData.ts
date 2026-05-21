@@ -170,17 +170,15 @@ export const stages: Stage[] = [
  {
  id: 1, anchor: "stage-1", tag: "Stage 1",
  title: "Functional programming foundations",
- desc: "Modern React makes much more sense once these ideas stop feeling abstract. Immutability, pure functions, composition, and data transformation show up everywhere, so this stage is less a theory detour and more the grammar the rest of the roadmap is written in. The goal here is not to become a functional programming purist, but to get comfortable with the patterns React leans on every day.",
+ desc: "Modern React makes much more sense once these ideas stop feeling abstract. This stage is less a theory detour and more a practical introduction to the patterns React leans on every day.",
  topics: [
  {
- title: "Where this fits in the bigger roadmap",
- hint: "A practical map, not a competing one",
- sub: "This roadmap is meant to guide the React mental model in a deliberate order. If you want a broader industry map alongside it, roadmap.sh is a useful companion.",
+ title: "The best React roadmap",
+ hint: "A practical companion",
+ sub: "If you want a broader map alongside this one, roadmap.sh is a strong companion.",
  sections: [
  { h: "What matters here", items: [
- "This stage is about the ideas React uses constantly, not about mastering functional programming as a standalone philosophy",
- "If a concept here feels abstract, tie it back to state updates, array transforms, event handlers, and hooks",
- "A broader roadmap can help you see where React fits in the wider frontend ecosystem"
+ "I couldn't possibly come with a better roadmap than the ones in roadmap.sh, but together with it I can highlight the topics that deserve attention"
  ]},
  { h: "Further reading", isResources: true, items: [
  "roadmap.sh - React roadmap (https://roadmap.sh/react)"
