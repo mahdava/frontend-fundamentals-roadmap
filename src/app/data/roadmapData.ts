@@ -309,10 +309,10 @@ export const stages: Stage[] = [
  sub: "These are the JavaScript features you keep seeing in modern React code, often to the point where older syntax starts to feel out of place.",
  sections: [
  { h: "What matters here", items: [
- "**Destructuring** shows up everywhere in props, arrays, and return values from hooks",
- "**Spread syntax** is one of the main tools for updating objects and arrays without mutating them",
- "**Optional chaining** and **nullish coalescing** make UI code safer when values may be missing",
- "A lot of modern React code reads the way it does because these features are doing quiet work in nearly every file"
+ "**Destructuring** often looks like `const { title } = props` or `const [count, setCount] = useState(0)`",
+ "**Spread syntax** often looks like `setUser({ ...user, name: 'Lucia' })` or `setItems([...items, nextItem])`",
+ "**Optional chaining** often looks like `user?.profile?.name` when some data may still be missing",
+ "**Nullish coalescing** often looks like `label ?? 'Untitled'` when you want a fallback only for `null` or `undefined`"
  ]},
  { h: "Things worth asking", items: [
  "When does nullish coalescing differ from logical OR?",
