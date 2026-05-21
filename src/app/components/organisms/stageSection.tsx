@@ -1,5 +1,6 @@
 import type { Stage, Topic } from "../../data/roadmapData";
 import { Badge } from "../atoms/badge";
+import { MarkdownText } from "../atoms/markdownText";
 import { Typography } from "../atoms/typography";
 import { TopicCard } from "../molecules/topicCard";
 
@@ -21,7 +22,7 @@ export const StageSection = ({ stage, activeKey, onPinToggle }: StageSectionProp
         </Typography>
       </div>
       <Typography className="mb-4 max-w-[70ch]" variant="body" tone="muted">
-        {desc}
+        <MarkdownText content={desc} />
       </Typography>
       <div className="grid grid-cols-[repeat(auto-fill,minmax(232px,1fr))] gap-3">
         {topics.map((topic) => {
