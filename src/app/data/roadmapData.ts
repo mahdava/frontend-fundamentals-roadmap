@@ -116,10 +116,10 @@ export const stages: Stage[] = [
  sub: "Vue and React both care about composition, but they package it differently. This is where a lot of framework intuition gets translated.",
  sections: [
  { h: "What matters here", items: [
- "Vue slots and React children solve similar composition problems with different ergonomics",
+ "**Vue slots and React children solve similar composition problems** with different ergonomics",
  "React often prefers composition through children, props, and plain JavaScript patterns over framework-specific template features",
  "Understanding this shift makes React component APIs feel much less arbitrary",
- "React component APIs often feel more like *function design* than template design",
+ "**React component APIs often feel more like function design** rather than template design",
  "Named slots in Vue often become explicit props that accept JSX or components in React",
  "React composition tends to be more flexible, but also asks you to design cleaner APIs yourself"
  ]},
