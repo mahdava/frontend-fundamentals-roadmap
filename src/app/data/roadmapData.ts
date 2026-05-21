@@ -216,10 +216,10 @@ export const stages: Stage[] = [
  sub: "A lot of React confusion turns out to be plain JavaScript identity confusion. Learn this early and many later bugs become easier to diagnose.",
  sections: [
  { h: "What matters here", items: [
- "Primitives are copied by value, objects and arrays are passed by reference",
- "Two identical-looking objects are still different references",
- "React often cares about identity, not deep equality",
- "A lot of confusing React behavior becomes clearer once you stop treating look the same as are the same"
+ "Simple values like strings and numbers are **copied by value**",
+ "**Objects and arrays are compared by reference**",
+ "Two objects can look the same and still be different values to React",
+ "**React often checks whether something is the same object, not whether it has the same contents**"
  ]},
  { h: "Things worth asking", items: [
  "Why can two arrays with the same contents still behave differently in React updates?",
@@ -237,10 +237,10 @@ export const stages: Stage[] = [
  sub: "Why React appears not to notice when you change state directly.",
  sections: [
  { h: "What matters here", items: [
- "Mutation changes a value in place, immutability creates a new value",
- "Spread, Array.map, Array.filter, and Object.assign are everyday tools",
- "React checks references, not deep equality, so mutated values often look unchanged to React",
- "This is why immutable updates are not style points, they are how React notices change"
+ "Mutation changes a value in place, **immutability creates a new value**",
+ "**Spread**, **Array.map**, **Array.filter**, and **Object.assign** are everyday tools",
+ "React checks references, not deep equality, so **mutated values often look unchanged to React**",
+ "This is why creating a new value matters when you update state"
  ]},
  { h: "Things worth asking", items: [
  "Why does state.push(x); setState(state) often appear to do nothing?",
