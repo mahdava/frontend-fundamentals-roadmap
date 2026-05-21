@@ -281,7 +281,7 @@ export const stages: Stage[] = [
  "What does the dependency array of useEffect actually control?"
  ]},
  { h: "Signs it’s clicking", items: [
- "Closures stop feeling magical and start feeling predictable"
+ "You can usually tell when a callback is reading stale values"
  ]},
  { h: "Further reading", isResources: true, items: [
  "javascript.info - Closures (https://javascript.info/closure)",
