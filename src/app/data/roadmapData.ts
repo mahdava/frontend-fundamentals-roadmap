@@ -306,21 +306,23 @@ export const stages: Stage[] = [
  {
  title: "Modern ES syntax",
  hint: "Destructuring, spread, optional chaining",
- sub: "The idioms that make modern JavaScript feel like a different language from older codebases.",
+ sub: "These are the JavaScript features you keep seeing in modern React code, often to the point where older syntax starts to feel out of place.",
  sections: [
  { h: "What matters here", items: [
- "Destructuring for objects and arrays",
- "Spread and rest parameters",
- "Template literals",
- "Optional chaining and nullish coalescing"
+ "**Destructuring** shows up everywhere in props, arrays, and return values from hooks",
+ "**Spread syntax** is one of the main tools for updating objects and arrays without mutating them",
+ "**Optional chaining** and **nullish coalescing** make UI code safer when values may be missing",
+ "A lot of modern React code reads the way it does because these features are doing quiet work in nearly every file"
  ]},
  { h: "Things worth asking", items: [
  "When does nullish coalescing differ from logical OR?",
- "What kinds of code become clearer with destructuring, and what kinds become harder to read?"
+ "When does destructuring make code clearer, and when does it make it harder to scan?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "javascript.info (https://javascript.info/)",
- "MDN JavaScript reference (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)"
+ "javascript.info - Destructuring assignment (https://javascript.info/destructuring-assignment)",
+ "MDN - Spread syntax (...) (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)",
+ "MDN - Optional chaining (?.) (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)",
+ "MDN - Nullish coalescing operator (??) (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)"
  ]}
  ]
  },
