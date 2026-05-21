@@ -170,7 +170,7 @@ export const stages: Stage[] = [
  {
  id: 1, anchor: "stage-1", tag: "Stage 1",
  title: "Functional programming foundations",
- desc: "Modern React makes much more sense once these ideas stop feeling abstract. Immutability, pure functions, composition, and data transformation show up everywhere, so this stage is less a theory detour and more the grammar the rest of the roadmap is written in.",
+ desc: "Modern React makes much more sense once these ideas stop feeling abstract. This stage is less a theory detour and more a practical introduction to the patterns React leans on every day.",
  topics: [
  {
  title: "Pure functions",
@@ -178,9 +178,9 @@ export const stages: Stage[] = [
  sub: "The atom of functional programming, and the shape of every React component.",
  sections: [
  { h: "What matters here", items: [
- "A pure function has **no side effects** and returns the same output for the same inputs",
- "Pure functions are testable, composable, and easier to reason about",
- "React components are mostly pure functions of their props"
+ "A pure function has **no side effects**, meaning that with the same input you get the same output",
+ "Pure functions are easier to test and easier to trust",
+ "**React components are mostly pure functions of their props**"
  ]},
  { h: "Things worth asking", items: [
  "What counts as a side effect?",
@@ -192,6 +192,7 @@ export const stages: Stage[] = [
  "You isolate them rather than letting them spread"
  ]},
  { h: "Further reading", isResources: true, items: [
+ "React docs - Keeping Components Pure (https://react.dev/learn/keeping-components-pure)",
  "Mostly Adequate Guide to FP - Ch 1-3 (https://github.com/MostlyAdequate/mostly-adequate-guide)",
  "Composing Software - Eric Elliott (https://medium.com/javascript-scene/composing-software-an-introduction-7f05d2b36d1d)"
  ]}
@@ -203,17 +204,19 @@ export const stages: Stage[] = [
  sub: "A lot of React confusion turns out to be plain JavaScript identity confusion. Learn this early and many later bugs become easier to diagnose.",
  sections: [
  { h: "What matters here", items: [
- "Primitives are copied by value, objects and arrays are passed by reference",
- "Two identical-looking objects are still different references",
- "React often cares about identity, not deep equality"
+ "Simple values like strings and numbers are **copied by value**",
+ "**Objects and arrays are compared by reference**",
+ "Two objects can look the same and still be different values to React",
+ "**React often checks whether something is the same object, not whether it has the same contents**"
  ]},
  { h: "Things worth asking", items: [
  "Why can two arrays with the same contents still behave differently in React updates?",
  "What kinds of bugs come from assuming object equality means reference equality?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "MDN - Working with objects (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects)",
- "javascript.info - Object references and copying (https://javascript.info/object-copy)"
+ "javascript.info - Object references and copying (https://javascript.info/object-copy)",
+ "MDN - Equality comparisons and sameness (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)",
+ "React docs - Updating Objects in State (https://react.dev/learn/updating-objects-in-state)"
  ]}
  ]
  },
@@ -223,9 +226,10 @@ export const stages: Stage[] = [
  sub: "Why React appears not to notice when you change state directly.",
  sections: [
  { h: "What matters here", items: [
- "Mutation changes a value in place, immutability creates a new value",
- "Spread, Array.map, Array.filter, and Object.assign are everyday tools",
- "React checks references, not deep equality, so mutated values often look unchanged to React"
+ "Mutation changes a value in place, **immutability creates a new value**",
+ "**Spread**, **Array.map**, **Array.filter**, and **Object.assign** are everyday tools",
+ "React checks references, not deep equality, so **mutated values often look unchanged to React**",
+ "This is why creating a new value matters when you update state"
  ]},
  { h: "Things worth asking", items: [
  "Why does state.push(x); setState(state) often appear to do nothing?",
@@ -235,31 +239,35 @@ export const stages: Stage[] = [
  "You reach for map, filter, and spread instead of push or splice automatically"
  ]},
  { h: "Further reading", isResources: true, items: [
- "React docs - Updating objects in state (https://react.dev/learn/updating-objects-in-state)",
- "React docs - Updating arrays in state (https://react.dev/learn/updating-arrays-in-state)"
+ "React docs - Updating Objects in State (https://react.dev/learn/updating-objects-in-state)",
+ "React docs - Updating Arrays in State (https://react.dev/learn/updating-arrays-in-state)",
+ "React docs - State as a Snapshot (https://react.dev/learn/state-as-a-snapshot)"
  ]}
  ]
  },
  {
  title: "Higher-order functions",
  hint: "Functions as values",
- sub: "Once functions are values, programs become pipelines.",
+ sub: "This is mostly about understanding why callbacks and array transforms feel so natural in React code.",
  sections: [
  { h: "What matters here", items: [
- "Functions can be passed as arguments and returned from other functions",
- "map, filter, and reduce replace a lot of low-level looping",
- "Composition lets you build bigger behavior from smaller units"
+ "**Functions in JavaScript can be treated like values**",
+ "That means you can pass them around, return them, and reuse them in different places",
+ "This is why callbacks are everywhere in React",
+ "Methods like **map** and **filter** help you transform data without messy loops"
  ]},
  { h: "Things worth asking", items: [
- "When is reduce the right answer, and when is it overkill?",
- "What does currying actually buy you?"
+ "Why does React code rely so heavily on callbacks?",
+ "When do array methods make code clearer than a manual loop?"
  ]},
  { h: "Signs it’s clicking", items: [
- "You write transformations as pipelines instead of loops with mutable accumulators"
+ "You start seeing callbacks and array transforms as normal building blocks, not special tricks"
  ]},
  { h: "Further reading", isResources: true, items: [
- "MDN - Array methods (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)",
- "Eloquent JavaScript - Higher-order functions (https://eloquentjavascript.net/05_higher_order.html)"
+ "Eloquent JavaScript - Higher-order functions (https://eloquentjavascript.net/05_higher_order.html)",
+ "MDN - Array.prototype.map() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)",
+ "MDN - Array.prototype.filter() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)",
+ "React docs - Rendering Lists (https://react.dev/learn/rendering-lists)"
  ]}
  ]
  },
@@ -269,20 +277,22 @@ export const stages: Stage[] = [
  sub: "How hooks remember state, and the cause of a surprising number of React bugs.",
  sections: [
  { h: "What matters here", items: [
- "A closure is a function plus the variables it captured when it was created",
+ "**A closure is a function plus the variables it captured when it was created**",
  "Every render creates new function values that close over that render's values",
- "The stale closure problem appears when a callback sees older values than you expected"
+ "**The stale closure problem appears when a callback sees older values than you expected**"
  ]},
  { h: "Things worth asking", items: [
  "Why does a setTimeout inside a component often log old state?",
  "What does the dependency array of useEffect actually control?"
  ]},
  { h: "Signs it’s clicking", items: [
- "Closures stop feeling magical and start feeling predictable"
+ "You can usually tell when a callback is reading stale values"
  ]},
  { h: "Further reading", isResources: true, items: [
- "javascript.info - Closures (https://javascript.info/closure)",
- "Dan Abramov - A Complete Guide to useEffect (https://overreacted.io/a-complete-guide-to-useeffect/)"
+ "javascript.info - Variable scope, closure (https://javascript.info/closure)",
+ "React docs - Synchronizing with Effects (https://react.dev/learn/synchronizing-with-effects)",
+ "Dan Abramov - A Complete Guide to useEffect (https://overreacted.io/a-complete-guide-to-useeffect/)",
+ "Oh No - Common useEffect mistakes (https://www.oh-no.ooo/articles/common-useeffect-mistakes)"
  ]}
  ]
  }
@@ -405,6 +415,19 @@ export const stages: Stage[] = [
  title: "React, deeply",
  desc: "This is where React stops being components and hooks and starts feeling coherent. Focus on the rendering model, state snapshots, effects, and the habits that separate code that merely works from code that stays understandable.",
  topics: [
+ {
+ title: "The best React roadmap",
+ hint: "A practical companion",
+ sub: "If you want a broader map alongside this one, roadmap.sh is a strong companion.",
+ sections: [
+ { h: "What matters here", items: [
+ "roadmap.sh already does a great job mapping the territory, and I am trying to help by highlighting other important topics too"
+ ]},
+ { h: "Further reading", isResources: true, items: [
+ "roadmap.sh - React roadmap (https://roadmap.sh/react)"
+ ]}
+ ]
+ },
  {
  title: "Components are functions",
  hint: "JSX returns a description",
