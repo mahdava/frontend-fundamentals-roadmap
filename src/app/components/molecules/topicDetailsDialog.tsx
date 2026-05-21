@@ -2,7 +2,6 @@
 
 import type { Topic } from "../../data/roadmapData";
 import { Dialog } from "../atoms/dialog";
-import { MarkdownText } from "../atoms/markdownText";
 import { Typography } from "../atoms/typography";
 import { TopicSections } from "./topicSections";
 
@@ -25,7 +24,7 @@ export const TopicDetailsDialog = ({ topic, open, onOpenChange }: TopicDetailsDi
       }
       description={
         <Typography variant="label" tone="muted" className="italic">
-          <MarkdownText content={topic.sub} />
+          {topic.sub}
         </Typography>
       }
     >
