@@ -329,21 +329,23 @@ export const stages: Stage[] = [
  {
  title: "Async patterns",
  hint: "Promises and async/await",
- sub: "Asynchrony is everywhere in frontend. Get the model crisp now and a lot of later framework behavior will feel less mysterious.",
+ sub: "Asynchrony is part of everyday frontend work. Data fetching, form submissions, loading states, and error handling all get easier once the model feels clear.",
  sections: [
  { h: "What matters here", items: [
- "A promise is a value that becomes available later",
- "async and await are syntax over promise chaining",
- "Errors in async code need explicit boundaries",
- "Promise.all and friends let you model concurrency deliberately"
+ "A **promise** represents a value that will arrive later",
+ "**async** and **await** make asynchronous code easier to read, but they do not change how promises work",
+ "A lot of frontend bugs come from not being clear about what is running in sequence and what can run in parallel",
+ "Good async code also means deciding where loading states and errors should surface"
  ]},
  { h: "Things worth asking", items: [
- "How do you fetch two things in parallel without awaiting them sequentially?",
- "Where should you catch errors, at every await or at a boundary?"
+ "How do you fetch two things in parallel without awaiting them one after the other?",
+ "Where should you catch errors, close to the request or at a broader boundary?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "javascript.info - Async (https://javascript.info/async)",
- "MDN - Asynchronous JavaScript (https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)"
+ "javascript.info - Promises, async/await (https://javascript.info/async)",
+ "MDN - Using promises (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)",
+ "MDN - async function (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)",
+ "MDN - Promise.all() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)"
  ]}
  ]
  },
