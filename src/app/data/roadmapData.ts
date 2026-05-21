@@ -191,10 +191,9 @@ export const stages: Stage[] = [
  sub: "The atom of functional programming, and the shape of every React component.",
  sections: [
  { h: "What matters here", items: [
- "A pure function has **no side effects** and returns the same output for the same inputs",
+ "A pure function has **no side effects**, meaning that with the same input you get the same output",
  "Pure functions are easier to test and easier to trust",
- "React components are mostly pure functions of their props",
- "Once purity clicks, React's rendering model starts to feel much less mysterious"
+ "**React components are mostly pure functions of their props**"
  ]},
  { h: "Things worth asking", items: [
  "What counts as a side effect?",
