@@ -300,7 +300,8 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "javascript.info - Closures (https://javascript.info/closure)",
- "Dan Abramov - A Complete Guide to useEffect (https://overreacted.io/a-complete-guide-to-useeffect/)"
+ "Dan Abramov - A Complete Guide to useEffect (https://overreacted.io/a-complete-guide-to-useeffect/)",
+ "Oh No - Common useEffect mistakes (https://www.oh-no.ooo/articles/common-useeffect-mistakes)"
  ]}
  ]
  }
