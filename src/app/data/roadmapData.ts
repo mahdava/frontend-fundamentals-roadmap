@@ -192,6 +192,7 @@ export const stages: Stage[] = [
  "You isolate them rather than letting them spread"
  ]},
  { h: "Further reading", isResources: true, items: [
+ "React docs - Keeping Components Pure (https://react.dev/learn/keeping-components-pure)",
  "Mostly Adequate Guide to FP - Ch 1-3 (https://github.com/MostlyAdequate/mostly-adequate-guide)",
  "Composing Software - Eric Elliott (https://medium.com/javascript-scene/composing-software-an-introduction-7f05d2b36d1d)"
  ]}
@@ -213,8 +214,9 @@ export const stages: Stage[] = [
  "What kinds of bugs come from assuming object equality means reference equality?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "MDN - Working with objects (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_objects)",
- "javascript.info - Object references and copying (https://javascript.info/object-copy)"
+ "javascript.info - Object references and copying (https://javascript.info/object-copy)",
+ "MDN - Equality comparisons and sameness (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)",
+ "React docs - Updating Objects in State (https://react.dev/learn/updating-objects-in-state)"
  ]}
  ]
  },
@@ -237,8 +239,9 @@ export const stages: Stage[] = [
  "You reach for map, filter, and spread instead of push or splice automatically"
  ]},
  { h: "Further reading", isResources: true, items: [
- "React docs - Updating objects in state (https://react.dev/learn/updating-objects-in-state)",
- "React docs - Updating arrays in state (https://react.dev/learn/updating-arrays-in-state)"
+ "React docs - Updating Objects in State (https://react.dev/learn/updating-objects-in-state)",
+ "React docs - Updating Arrays in State (https://react.dev/learn/updating-arrays-in-state)",
+ "React docs - State as a Snapshot (https://react.dev/learn/state-as-a-snapshot)"
  ]}
  ]
  },
@@ -261,8 +264,10 @@ export const stages: Stage[] = [
  "You start seeing callbacks and array transforms as normal building blocks, not special tricks"
  ]},
  { h: "Further reading", isResources: true, items: [
- "MDN - Array methods (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)",
- "Eloquent JavaScript - Higher-order functions (https://eloquentjavascript.net/05_higher_order.html)"
+ "Eloquent JavaScript - Higher-order functions (https://eloquentjavascript.net/05_higher_order.html)",
+ "MDN - Array.prototype.map() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)",
+ "MDN - Array.prototype.filter() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)",
+ "React docs - Rendering Lists (https://react.dev/learn/rendering-lists)"
  ]}
  ]
  },
@@ -284,7 +289,8 @@ export const stages: Stage[] = [
  "You can usually tell when a callback is reading stale values"
  ]},
  { h: "Further reading", isResources: true, items: [
- "javascript.info - Closures (https://javascript.info/closure)",
+ "javascript.info - Variable scope, closure (https://javascript.info/closure)",
+ "React docs - Synchronizing with Effects (https://react.dev/learn/synchronizing-with-effects)",
  "Dan Abramov - A Complete Guide to useEffect (https://overreacted.io/a-complete-guide-to-useeffect/)",
  "Oh No - Common useEffect mistakes (https://www.oh-no.ooo/articles/common-useeffect-mistakes)"
  ]}
