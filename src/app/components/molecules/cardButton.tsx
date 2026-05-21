@@ -11,7 +11,7 @@ export const CardButton = ({ children, isPinned = false, className, ...props }: 
   return (
     <Button
       className={twMerge(
-        "cursor-pointer rounded-[18px] border bg-card p-4 text-left transition-colors duration-150 ease-out motion-reduce:transition-none hover:border-accent/45 hover:bg-accent-soft/40",
+        "relative cursor-pointer rounded-[18px] border bg-card p-4 text-left transition-colors duration-150 ease-out motion-reduce:transition-none hover:border-accent/45 hover:bg-accent-soft/40",
         isPinned ? "border-accent/45 bg-accent-soft/40" : "border-card-border",
         className,
       )}

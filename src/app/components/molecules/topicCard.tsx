@@ -17,16 +17,14 @@ export const TopicCard = ({ topic, topicKey, isPinned, onPinToggle }: TopicCardP
 
   return (
     <CardButton isPinned={isPinned} onClick={handleClick}>
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0 flex-1">
-          <span className="block text-base font-semibold">{topic.title}</span>
-          <span className="mt-0.5 block text-sm text-muted">{topic.hint}</span>
-        </div>
-        {isPinned && (
-          <span className="shrink-0 rounded-full bg-accent-soft px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-accent">
-            Open
-          </span>
-        )}
+      {isPinned && (
+        <span className="absolute right-4 top-4 rounded-full bg-accent-soft px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-accent">
+          Open
+        </span>
+      )}
+      <div className="min-w-0">
+        <span className="block text-base font-semibold">{topic.title}</span>
+        <span className="mt-0.5 block text-sm text-muted">{topic.hint}</span>
       </div>
     </CardButton>
   );
