@@ -170,8 +170,23 @@ export const stages: Stage[] = [
  {
  id: 1, anchor: "stage-1", tag: "Stage 1",
  title: "Functional programming foundations",
- desc: "Modern React makes much more sense once these ideas stop feeling abstract. Immutability, pure functions, composition, and data transformation show up everywhere, so this stage is less a theory detour and more the grammar the rest of the roadmap is written in.",
+ desc: "Modern React makes much more sense once these ideas stop feeling abstract. Immutability, pure functions, composition, and data transformation show up everywhere, so this stage is less a theory detour and more the grammar the rest of the roadmap is written in. The goal here is not to become a functional programming purist, but to get comfortable with the patterns React leans on every day.",
  topics: [
+ {
+ title: "Where this fits in the bigger roadmap",
+ hint: "A practical map, not a competing one",
+ sub: "This roadmap is meant to guide the React mental model in a deliberate order. If you want a broader industry map alongside it, roadmap.sh is a useful companion.",
+ sections: [
+ { h: "What matters here", items: [
+ "This stage is about the ideas React uses constantly, not about mastering functional programming as a standalone philosophy",
+ "If a concept here feels abstract, tie it back to state updates, array transforms, event handlers, and hooks",
+ "A broader roadmap can help you see where React fits in the wider frontend ecosystem"
+ ]},
+ { h: "Further reading", isResources: true, items: [
+ "roadmap.sh - React roadmap (https://roadmap.sh/react)"
+ ]}
+ ]
+ },
  {
  title: "Pure functions",
  hint: "Same input, same output",
@@ -179,8 +194,9 @@ export const stages: Stage[] = [
  sections: [
  { h: "What matters here", items: [
  "A pure function has **no side effects** and returns the same output for the same inputs",
- "Pure functions are testable, composable, and easier to reason about",
- "React components are mostly pure functions of their props"
+ "Pure functions are easier to test and easier to trust",
+ "React components are mostly pure functions of their props",
+ "Once purity clicks, React's rendering model starts to feel much less mysterious"
  ]},
  { h: "Things worth asking", items: [
  "What counts as a side effect?",
@@ -205,7 +221,8 @@ export const stages: Stage[] = [
  { h: "What matters here", items: [
  "Primitives are copied by value, objects and arrays are passed by reference",
  "Two identical-looking objects are still different references",
- "React often cares about identity, not deep equality"
+ "React often cares about identity, not deep equality",
+ "A lot of confusing React behavior becomes clearer once you stop treating look the same as are the same"
  ]},
  { h: "Things worth asking", items: [
  "Why can two arrays with the same contents still behave differently in React updates?",
@@ -225,7 +242,8 @@ export const stages: Stage[] = [
  { h: "What matters here", items: [
  "Mutation changes a value in place, immutability creates a new value",
  "Spread, Array.map, Array.filter, and Object.assign are everyday tools",
- "React checks references, not deep equality, so mutated values often look unchanged to React"
+ "React checks references, not deep equality, so mutated values often look unchanged to React",
+ "This is why immutable updates are not style points, they are how React notices change"
  ]},
  { h: "Things worth asking", items: [
  "Why does state.push(x); setState(state) often appear to do nothing?",
@@ -248,7 +266,8 @@ export const stages: Stage[] = [
  { h: "What matters here", items: [
  "Functions can be passed as arguments and returned from other functions",
  "map, filter, and reduce replace a lot of low-level looping",
- "Composition lets you build bigger behavior from smaller units"
+ "Composition lets you build bigger behavior from smaller units",
+ "This is less about sounding functional and more about writing transformations that stay readable"
  ]},
  { h: "Things worth asking", items: [
  "When is reduce the right answer, and when is it overkill?",
@@ -271,7 +290,8 @@ export const stages: Stage[] = [
  { h: "What matters here", items: [
  "A closure is a function plus the variables it captured when it was created",
  "Every render creates new function values that close over that render's values",
- "The stale closure problem appears when a callback sees older values than you expected"
+ "The stale closure problem appears when a callback sees older values than you expected",
+ "This is one of the ideas that makes hooks feel strange until it suddenly clicks"
  ]},
  { h: "Things worth asking", items: [
  "Why does a setTimeout inside a component often log old state?",
