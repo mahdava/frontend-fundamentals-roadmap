@@ -60,11 +60,11 @@ export const stages: Stage[] = [
  sections: [
  { h: "What matters here", items: [
  "Vue tracks reactive dependencies and updates consumers automatically",
- "React re-renders components when state or props change, then reconciles the UI from that new tree",
- "React's model makes *render purity* and immutability more central to day-to-day work",
- "React does not watch individual properties in the Vue sense, it re-runs components and compares results",
+ "**React re-renders components when state or props change**, then reconciles the UI from that new tree",
+ "React's model makes render purity and immutability more central to day-to-day work",
+ "React does not watch individual properties in the Vue sense, it **re-runs components and compares results**",
  "A render in React is cheap and expected, not automatically a sign that something went wrong",
- "The key discipline in React is not tracking dependencies manually, but keeping renders pure and state immutable"
+ "**The key discipline in React is not tracking dependencies manually**, but keeping renders pure and state immutable"
  ]},
  { h: "Things worth asking", items: [
  "Why does direct mutation feel more tolerated in Vue than in React?",
