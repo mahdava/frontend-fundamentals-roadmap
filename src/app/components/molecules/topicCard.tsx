@@ -22,7 +22,7 @@ export const TopicCard = ({ topic, topicKey, isPinned, onPinToggle }: TopicCardP
           Open
         </span>
       )}
-      <div className="min-w-0 pr-16">
+      <div className="min-w-0">
         <span className="block text-base font-semibold">{topic.title}</span>
         <span className="mt-0.5 block text-sm text-muted">{topic.hint}</span>
       </div>
