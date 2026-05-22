@@ -435,19 +435,21 @@ export const stages: Stage[] = [
  {
  title: "Components are functions",
  hint: "JSX returns a description",
- sub: "Modern React is function components all the way down.",
+ sub: "This is the shift that makes React start to feel coherent: components are not templates, they are functions that describe UI.",
  sections: [
  { h: "What matters here", items: [
- "A component is a function from props to a UI description",
- "JSX returns objects, not HTML",
- "React renders the description, then reconciles with the DOM"
+ "A React component is a function that takes inputs and returns a UI description",
+ "**JSX is not HTML**, it is a JavaScript syntax for describing what you want the UI tree to look like",
+ "When React renders, it calls your component and gets back that description",
+ "React then compares the new description with the previous one and updates only what changed in the DOM"
  ]},
  { h: "Things worth asking", items: [
- "What is the difference between writing <Foo /> and calling Foo() directly?",
- "Why do lists need stable keys?"
+ "What is the difference between writing `<Foo />` and calling `Foo()` directly?",
+ "Why does it matter that a component is describing UI rather than building it by hand?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "React docs - Describing the UI (https://react.dev/learn/describing-the-ui)"
+ "React docs - Describing the UI (https://react.dev/learn/describing-the-ui)",
+ "React docs - Your First Component (https://react.dev/learn/your-first-component)"
  ]}
  ]
  },
@@ -521,25 +523,46 @@ export const stages: Stage[] = [
  ]
  },
  {
- title: "Refs and memoization",
- hint: "Escape hatches with tradeoffs",
- sub: "Useful tools, but not default tools.",
+ title: "Refs",
+ hint: "Mutable values without re-renders",
+ sub: "Refs are one of React's escape hatches. They are useful precisely because they let you hold onto values without treating them as state.",
  sections: [
  { h: "What matters here", items: [
- "useRef stores mutable values without causing re-renders",
- "useMemo caches a computed value",
- "useCallback caches a function identity",
- "React.memo only helps when prop identity and render cost make that tradeoff worthwhile"
+ "`useRef` stores a value that survives across renders without causing a new render when it changes",
+ "Refs are often used for DOM access, focus management, timers, or storing mutable values that are not part of the UI",
+ "If changing a value should update what the user sees, it probably belongs in state, not in a ref"
+ ]},
+ { h: "Things worth asking", items: [
+ "When is a ref the right tool instead of state?",
+ "What kinds of bugs happen when you put UI-driving data in a ref?"
+ ]},
+ { h: "Further reading", isResources: true, items: [
+ "React docs - Referencing Values with Refs (https://react.dev/learn/referencing-values-with-refs)",
+ "React docs - Manipulating the DOM with Refs (https://react.dev/learn/manipulating-the-dom-with-refs)"
+ ]}
+ ]
+ },
+ {
+ title: "Memoization",
+ hint: "Useful when you have a real reason",
+ sub: "Memoization tools can help, but they are easy to overuse. They make the most sense once you already understand rendering and can point to an actual problem.",
+ sections: [
+ { h: "What matters here", items: [
+ "`useMemo` caches a computed value",
+ "`useCallback` caches a function identity",
+ "`React.memo` can skip a re-render when props have not meaningfully changed",
+ "These tools help only when the tradeoff is real, not just because the API exists"
  ]},
  { h: "Things worth asking", items: [
  "When does memoization actually pay for itself?",
  "Why does premature memoization often make code harder to maintain?"
  ]},
  { h: "Signs it’s clicking", items: [
- "You reach for these because you measured a problem, not because the API exists"
+ "You reach for memoization because you measured a problem, not because you feel obliged to optimize"
  ]},
  { h: "Further reading", isResources: true, items: [
- "React docs - useRef (https://react.dev/reference/react/useRef)",
+ "React docs - `useMemo` (https://react.dev/reference/react/useMemo)",
+ "React docs - `useCallback` (https://react.dev/reference/react/useCallback)",
  "Dan Abramov - Before You memo() (https://overreacted.io/before-you-memo/)"
  ]}
  ]
