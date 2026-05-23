@@ -600,7 +600,7 @@ export const stages: Stage[] = [
  {
  id: 4, anchor: "stage-4", tag: "Stage 4",
  title: "React architecture patterns",
- desc: "Once an app grows past a handful of components, local decisions start becoming architectural ones. This stage is about state placement, composition, context, forms, and the patterns that help a React codebase stay flexible instead of quietly turning brittle.",
+ desc: "Once a React app grows past a handful of components, small decisions start having architectural consequences. This stage is about state placement, composition, context, forms, and the patterns that help a codebase stay clear and flexible as it grows.",
  topics: [
  {
  title: "Composition over configuration",
@@ -725,7 +725,7 @@ export const stages: Stage[] = [
  {
  id: 5, anchor: "stage-5", tag: "Stage 5",
  title: "Client vs server components",
- desc: "This is one of the biggest conceptual shifts in the React ecosystem. It is not just a new feature to memorize, but a different way of thinking about where code runs, what gets shipped to the browser, and how responsibility is split across the app.",
+ desc: "This is one of the biggest conceptual shifts in modern React. It is not just a feature to learn, but a different way of thinking about where code runs, what gets sent to the browser, and how responsibility is split across the app.",
  topics: [
  {
  title: "Why the split exists",
@@ -828,7 +828,7 @@ export const stages: Stage[] = [
  {
  id: 6, anchor: "stage-6", tag: "Stage 6",
  title: "Next.js",
- desc: "For many developers, this is where React becomes a real application stack. Prioritize the App Router, understand the full-stack model it introduces, and learn just enough of the Pages Router to stay oriented when older codebases still rely on it.",
+ desc: "For many developers, this is where React starts to feel like a full application stack. Focus on the App Router, understand the full-stack model it introduces, and learn just enough of the Pages Router to stay oriented in older codebases.",
  topics: [
  {
  title: "App Router vs Pages Router",
@@ -943,7 +943,7 @@ export const stages: Stage[] = [
  {
  id: 7, anchor: "stage-7", tag: "Stage 7",
  title: "Adjacent essentials",
- desc: "These are the tools and practices that quietly shape day-to-day frontend work: styling, accessibility, testing, client-side data fetching, and developer tooling. They are adjacent only in the sense that React does not own them, not because they are optional.",
+ desc: "These are the tools and practices that shape day-to-day frontend work: styling, accessibility, testing, client-side data fetching, and developer tooling. They are adjacent only in the sense that React does not own them, not because they matter less.",
  topics: [
  {
  title: "Styling and CSS architecture",
