@@ -449,7 +449,8 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "React docs - Describing the UI (https://react.dev/learn/describing-the-ui)",
- "React docs - Your First Component (https://react.dev/learn/your-first-component)"
+ "React docs - Your First Component (https://react.dev/learn/your-first-component)",
+ "React docs - Writing Markup with JSX (https://react.dev/learn/writing-markup-with-jsx)"
  ]}
  ]
  },
@@ -469,8 +470,9 @@ export const stages: Stage[] = [
  "What changes when several updates happen in one event?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "React docs - State as a snapshot (https://react.dev/learn/state-as-a-snapshot)",
- "React docs - Queueing a series of state updates (https://react.dev/learn/queueing-a-series-of-state-updates)"
+ "React docs - State as a Snapshot (https://react.dev/learn/state-as-a-snapshot)",
+ "React docs - Queueing a Series of State Updates (https://react.dev/learn/queueing-a-series-of-state-updates)",
+ "React docs - Responding to Events (https://react.dev/learn/responding-to-events)"
  ]}
  ]
  },
@@ -494,7 +496,8 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "React docs - Render and Commit (https://react.dev/learn/render-and-commit)",
- "React docs - Preserving and Resetting State (https://react.dev/learn/preserving-and-resetting-state)"
+ "React docs - Preserving and Resetting State (https://react.dev/learn/preserving-and-resetting-state)",
+ "React docs - Keeping Components Pure (https://react.dev/learn/keeping-components-pure)"
  ]}
  ]
  },
@@ -517,8 +520,11 @@ export const stages: Stage[] = [
  "You write fewer effects over time, not more"
  ]},
  { h: "Further reading", isResources: true, items: [
- "React docs - You might not need an effect (https://react.dev/learn/you-might-not-need-an-effect)",
- "Dan Abramov - A Complete Guide to useEffect (https://overreacted.io/a-complete-guide-to-useeffect/)"
+ "React docs - Synchronizing with Effects (https://react.dev/learn/synchronizing-with-effects)",
+ "React docs - You Might Not Need an Effect (https://react.dev/learn/you-might-not-need-an-effect)",
+ "React docs - Removing Effect Dependencies (https://react.dev/learn/removing-effect-dependencies)",
+ "Dan Abramov - A Complete Guide to useEffect (https://overreacted.io/a-complete-guide-to-useeffect/)",
+ "Oh No - Common useEffect mistakes (https://www.oh-no.ooo/articles/common-useeffect-mistakes)"
  ]}
  ]
  },
@@ -563,6 +569,7 @@ export const stages: Stage[] = [
  { h: "Further reading", isResources: true, items: [
  "React docs - `useMemo` (https://react.dev/reference/react/useMemo)",
  "React docs - `useCallback` (https://react.dev/reference/react/useCallback)",
+ "React docs - `memo` (https://react.dev/reference/react/memo)",
  "Dan Abramov - Before You memo() (https://overreacted.io/before-you-memo/)"
  ]}
  ]
@@ -583,7 +590,8 @@ export const stages: Stage[] = [
  "What makes a hook abstraction feel helpful rather than too clever?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "React docs - Reusing Logic with Custom Hooks (https://react.dev/learn/reusing-logic-with-custom-hooks)"
+ "React docs - Reusing Logic with Custom Hooks (https://react.dev/learn/reusing-logic-with-custom-hooks)",
+ "React docs - Rules of Hooks (https://react.dev/reference/rules/rules-of-hooks)"
  ]}
  ]
  }
