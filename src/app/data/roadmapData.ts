@@ -438,10 +438,10 @@ export const stages: Stage[] = [
  sub: "This is the shift that makes React start to feel coherent: components are not templates, they are functions that describe UI.",
  sections: [
  { h: "What matters here", items: [
- "A React component is a function that takes inputs and returns a UI description",
+ "**A React component is a function that takes inputs and returns a UI description**",
  "**JSX is not HTML**, it is a JavaScript syntax for describing what you want the UI tree to look like",
  "When React renders, it calls your component and gets back that description",
- "React then compares the new description with the previous one and updates only what changed in the DOM"
+ "**React** then compares the new description with the previous one and **updates only what changed in the DOM**"
  ]},
  { h: "Things worth asking", items: [
  "What is the difference between writing `<Foo />` and calling `Foo()` directly?",
@@ -459,9 +459,9 @@ export const stages: Stage[] = [
  sub: "The baseline mental model React keeps returning to.",
  sections: [
  { h: "What matters here", items: [
- "Props are read-only inputs",
- "State is local memory managed by hooks",
- "Children notify parents through callbacks passed as props",
+ "**Props are read-only inputs**",
+ "**State is local memory managed by hooks**",
+ "**Children notify parents through callbacks passed as props**",
  "State updates are batched and asynchronous from the render's point of view"
  ]},
  { h: "Things worth asking", items: [
@@ -480,10 +480,10 @@ export const stages: Stage[] = [
  sub: "Knowing what re-renders and why is the line between guessing and understanding.",
  sections: [
  { h: "What matters here", items: [
- "A state change triggers React to render the component again",
+ "**A state change triggers React to render the component again**",
  "Render means calling the component and producing a new description",
  "Commit means applying the necessary changes to the DOM",
- "React updates only the parts of the tree that changed"
+ "**React updates only the parts of the tree that changed**"
  ]},
  { h: "Things worth asking", items: [
  "What actually triggers a re-render?",
@@ -504,10 +504,10 @@ export const stages: Stage[] = [
  sub: "Most effects are written when they should not be. Learn the cases that genuinely need one.",
  sections: [
  { h: "What matters here", items: [
- "Effects synchronize your component with an external system",
- "They run after commit and can return cleanup",
- "The dependency array controls when the effect re-runs",
- "A surprising number of effects are really derived state or event handlers in disguise"
+ "**Effects are for syncing your component with something outside React**",
+ "They run after render and can return a cleanup function",
+ "The dependency array tells React when to run the effect again",
+ "A lot of things people write in `useEffect` should usually live in render logic or event handlers instead"
  ]},
  { h: "Things worth asking", items: [
  "When should you not use useEffect?",
@@ -573,10 +573,10 @@ export const stages: Stage[] = [
  sub: "The reuse mechanism React actually wants you to use.",
  sections: [
  { h: "What matters here", items: [
- "A custom hook is a function that calls other hooks",
+ "**A custom hook is a function that calls other hooks**",
  "Hooks compose cleanly into larger abstractions",
- "Custom hooks reuse logic, not UI",
- "Two components can use the same hook without sharing state"
+ "**Custom hooks reuse logic, not UI**",
+ "**Two components can use the same hook without sharing state**"
  ]},
  { h: "Things worth asking", items: [
  "When does logic deserve to become a custom hook?",
