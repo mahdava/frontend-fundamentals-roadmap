@@ -435,19 +435,22 @@ export const stages: Stage[] = [
  {
  title: "Components are functions",
  hint: "JSX returns a description",
- sub: "Modern React is function components all the way down.",
+ sub: "This is the shift that makes React start to feel coherent: components are not templates, they are functions that describe UI.",
  sections: [
  { h: "What matters here", items: [
- "A component is a function from props to a UI description",
- "JSX returns objects, not HTML",
- "React renders the description, then reconciles with the DOM"
+ "**A React component is a function that takes inputs and returns a UI description**",
+ "**JSX is not HTML**, it is a JavaScript syntax for describing what you want the UI tree to look like",
+ "When React renders, it calls your component and gets back that description",
+ "**React** then compares the new description with the previous one and **updates only what changed in the DOM**"
  ]},
  { h: "Things worth asking", items: [
- "What is the difference between writing <Foo /> and calling Foo() directly?",
- "Why do lists need stable keys?"
+ "What is the difference between writing `<Foo />` and calling `Foo()` directly?",
+ "Why does it matter that a component is describing UI rather than building it by hand?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "React docs - Describing the UI (https://react.dev/learn/describing-the-ui)"
+ "React docs - Describing the UI (https://react.dev/learn/describing-the-ui)",
+ "React docs - Your First Component (https://react.dev/learn/your-first-component)",
+ "React docs - Writing Markup with JSX (https://react.dev/learn/writing-markup-with-jsx)"
  ]}
  ]
  },
@@ -457,9 +460,9 @@ export const stages: Stage[] = [
  sub: "The baseline mental model React keeps returning to.",
  sections: [
  { h: "What matters here", items: [
- "Props are read-only inputs",
- "State is local memory managed by hooks",
- "Children notify parents through callbacks passed as props",
+ "**Props are read-only inputs**",
+ "**State is local memory managed by hooks**",
+ "**Children notify parents through callbacks passed as props**",
  "State updates are batched and asynchronous from the render's point of view"
  ]},
  { h: "Things worth asking", items: [
@@ -467,8 +470,9 @@ export const stages: Stage[] = [
  "What changes when several updates happen in one event?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "React docs - State as a snapshot (https://react.dev/learn/state-as-a-snapshot)",
- "React docs - Queueing a series of state updates (https://react.dev/learn/queueing-a-series-of-state-updates)"
+ "React docs - State as a Snapshot (https://react.dev/learn/state-as-a-snapshot)",
+ "React docs - Queueing a Series of State Updates (https://react.dev/learn/queueing-a-series-of-state-updates)",
+ "React docs - Responding to Events (https://react.dev/learn/responding-to-events)"
  ]}
  ]
  },
@@ -478,10 +482,10 @@ export const stages: Stage[] = [
  sub: "Knowing what re-renders and why is the line between guessing and understanding.",
  sections: [
  { h: "What matters here", items: [
- "A state change triggers React to render the component again",
+ "**A state change triggers React to render the component again**",
  "Render means calling the component and producing a new description",
  "Commit means applying the necessary changes to the DOM",
- "React updates only the parts of the tree that changed"
+ "**React updates only the parts of the tree that changed**"
  ]},
  { h: "Things worth asking", items: [
  "What actually triggers a re-render?",
@@ -492,7 +496,8 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "React docs - Render and Commit (https://react.dev/learn/render-and-commit)",
- "React docs - Preserving and Resetting State (https://react.dev/learn/preserving-and-resetting-state)"
+ "React docs - Preserving and Resetting State (https://react.dev/learn/preserving-and-resetting-state)",
+ "React docs - Keeping Components Pure (https://react.dev/learn/keeping-components-pure)"
  ]}
  ]
  },
@@ -502,10 +507,10 @@ export const stages: Stage[] = [
  sub: "Most effects are written when they should not be. Learn the cases that genuinely need one.",
  sections: [
  { h: "What matters here", items: [
- "Effects synchronize your component with an external system",
- "They run after commit and can return cleanup",
- "The dependency array controls when the effect re-runs",
- "A surprising number of effects are really derived state or event handlers in disguise"
+ "**Effects are for syncing your component with something outside React**",
+ "They run after render and can return a cleanup function",
+ "The dependency array tells React when to run the effect again",
+ "A lot of things people write in `useEffect` should usually live in render logic or event handlers instead"
  ]},
  { h: "Things worth asking", items: [
  "When should you not use useEffect?",
@@ -515,31 +520,56 @@ export const stages: Stage[] = [
  "You write fewer effects over time, not more"
  ]},
  { h: "Further reading", isResources: true, items: [
- "React docs - You might not need an effect (https://react.dev/learn/you-might-not-need-an-effect)",
- "Dan Abramov - A Complete Guide to useEffect (https://overreacted.io/a-complete-guide-to-useeffect/)"
+ "React docs - Synchronizing with Effects (https://react.dev/learn/synchronizing-with-effects)",
+ "React docs - You Might Not Need an Effect (https://react.dev/learn/you-might-not-need-an-effect)",
+ "React docs - Removing Effect Dependencies (https://react.dev/learn/removing-effect-dependencies)",
+ "Dan Abramov - A Complete Guide to useEffect (https://overreacted.io/a-complete-guide-to-useeffect/)",
+ "Oh No - Common useEffect mistakes (https://www.oh-no.ooo/articles/common-useeffect-mistakes)"
  ]}
  ]
  },
  {
- title: "Refs and memoization",
- hint: "Escape hatches with tradeoffs",
- sub: "Useful tools, but not default tools.",
+ title: "Refs",
+ hint: "Mutable values without re-renders",
+ sub: "Refs are one of React's escape hatches. They are useful precisely because they let you hold onto values without treating them as state.",
  sections: [
  { h: "What matters here", items: [
- "useRef stores mutable values without causing re-renders",
- "useMemo caches a computed value",
- "useCallback caches a function identity",
- "React.memo only helps when prop identity and render cost make that tradeoff worthwhile"
+ "`useRef` stores a value that survives across renders without causing a new render when it changes",
+ "Refs are often used for DOM access, focus management, timers, or storing mutable values that are not part of the UI",
+ "If changing a value should update what the user sees, it probably belongs in state, not in a ref"
+ ]},
+ { h: "Things worth asking", items: [
+ "When is a ref the right tool instead of state?",
+ "What kinds of bugs happen when you put UI-driving data in a ref?"
+ ]},
+ { h: "Further reading", isResources: true, items: [
+ "React docs - Referencing Values with Refs (https://react.dev/learn/referencing-values-with-refs)",
+ "React docs - Manipulating the DOM with Refs (https://react.dev/learn/manipulating-the-dom-with-refs)"
+ ]}
+ ]
+ },
+ {
+ title: "Memoization",
+ hint: "Useful when you have a real reason",
+ sub: "Memoization tools can help, but they are easy to overuse. They make the most sense once you already understand rendering and can point to an actual problem.",
+ sections: [
+ { h: "What matters here", items: [
+ "`useMemo` caches a computed value",
+ "`useCallback` caches a function identity",
+ "`React.memo` can skip a re-render when props have not meaningfully changed",
+ "These tools help only when the tradeoff is real, not just because the API exists"
  ]},
  { h: "Things worth asking", items: [
  "When does memoization actually pay for itself?",
  "Why does premature memoization often make code harder to maintain?"
  ]},
  { h: "Signs it’s clicking", items: [
- "You reach for these because you measured a problem, not because the API exists"
+ "You reach for memoization because you measured a problem, not because you feel obliged to optimize"
  ]},
  { h: "Further reading", isResources: true, items: [
- "React docs - useRef (https://react.dev/reference/react/useRef)",
+ "React docs - `useMemo` (https://react.dev/reference/react/useMemo)",
+ "React docs - `useCallback` (https://react.dev/reference/react/useCallback)",
+ "React docs - `memo` (https://react.dev/reference/react/memo)",
  "Dan Abramov - Before You memo() (https://overreacted.io/before-you-memo/)"
  ]}
  ]
@@ -550,17 +580,18 @@ export const stages: Stage[] = [
  sub: "The reuse mechanism React actually wants you to use.",
  sections: [
  { h: "What matters here", items: [
- "A custom hook is a function that calls other hooks",
+ "**A custom hook is a function that calls other hooks**",
  "Hooks compose cleanly into larger abstractions",
- "Custom hooks reuse logic, not UI",
- "Two components can use the same hook without sharing state"
+ "**Custom hooks reuse logic, not UI**",
+ "**Two components can use the same hook without sharing state**"
  ]},
  { h: "Things worth asking", items: [
  "When does logic deserve to become a custom hook?",
  "What makes a hook abstraction feel helpful rather than too clever?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "React docs - Reusing Logic with Custom Hooks (https://react.dev/learn/reusing-logic-with-custom-hooks)"
+ "React docs - Reusing Logic with Custom Hooks (https://react.dev/learn/reusing-logic-with-custom-hooks)",
+ "React docs - Rules of Hooks (https://react.dev/reference/rules/rules-of-hooks)"
  ]}
  ]
  }
