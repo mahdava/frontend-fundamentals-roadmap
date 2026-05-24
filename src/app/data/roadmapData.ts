@@ -133,6 +133,7 @@ export const stages: Stage[] = [
  "React docs - Passing JSX as children (https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children)",
  "React docs - Passing Props to a Component (https://react.dev/learn/passing-props-to-a-component)",
  "React docs - Composition vs Inheritance (https://legacy.reactjs.org/docs/composition-vs-inheritance.html)",
+ "Patterns.dev - Compound Pattern (https://www.patterns.dev/react/compound-pattern/)",
  "Vue docs - Slots (https://vuejs.org/guide/components/slots.html)",
  "Vue docs - Fallthrough Attributes (https://vuejs.org/guide/components/attrs.html)"
  ]}
@@ -161,7 +162,8 @@ export const stages: Stage[] = [
  "Vue docs - Single-file components (https://vuejs.org/guide/scaling-up/sfc.html)",
  "Vue docs - <script setup> (https://vuejs.org/api/sfc-script-setup.html)",
  "React docs - Your First Component (https://react.dev/learn/your-first-component)",
- "React docs - Importing and exporting components (https://react.dev/learn/importing-and-exporting-components)"
+ "React docs - Importing and exporting components (https://react.dev/learn/importing-and-exporting-components)",
+ "How Does React Tell a Class from a Function? - Dan Abramov (https://overreacted.io/how-does-react-tell-a-class-from-a-function/)"
  ]}
  ]
  }
@@ -345,7 +347,8 @@ export const stages: Stage[] = [
  "javascript.info - Promises, async/await (https://javascript.info/async)",
  "MDN - Using promises (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)",
  "MDN - async function (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)",
- "MDN - Promise.all() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)"
+ "MDN - Promise.all() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)",
+ "Async JavaScript: From Callbacks to Promises to Async/Await - Tyler McGinnis (https://ui.dev/async-javascript-from-callbacks-to-promises-to-async-await)"
  ]}
  ]
  },
@@ -364,7 +367,8 @@ export const stages: Stage[] = [
  "How does code splitting change what users actually download?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "MDN - JavaScript modules (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)"
+ "MDN - JavaScript modules (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)",
+ "ES Modules: A Cartoon Deep-Dive - Lin Clark (https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)"
  ]}
  ]
  },
@@ -388,7 +392,8 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "TypeScript Handbook (https://www.typescriptlang.org/docs/handbook/intro.html)",
- "Total TypeScript - Beginners tutorial (https://www.totaltypescript.com/tutorials/beginners-typescript)"
+ "Total TypeScript - Beginners tutorial (https://www.totaltypescript.com/tutorials/beginners-typescript)",
+ "React TypeScript Cheatsheet (https://react-typescript-cheatsheet.netlify.app/)"
  ]}
  ]
  },
@@ -408,7 +413,8 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "TypeScript Handbook - Narrowing (https://www.typescriptlang.org/docs/handbook/2/narrowing.html)",
- "TypeScript Handbook - Unions and intersections (https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html)"
+ "TypeScript Handbook - Unions and intersections (https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html)",
+ "Making Impossible States Impossible - Richard Feldman (https://www.youtube.com/watch?v=IcgmSRJHu_8)"
  ]}
  ]
  }
@@ -678,7 +684,9 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "React docs - input component (https://react.dev/reference/react-dom/components/input)",
- "react-hook-form (https://react-hook-form.com/)"
+ "react-hook-form (https://react-hook-form.com/)",
+ "Improve the Performance of your React Forms - Epic React (https://www.epicreact.dev/improve-the-performance-of-your-react-forms)",
+ "How to Build an Accessible React Form - Epic React (https://www.epicreact.dev/how-to-build-an-accessible-react-form)"
  ]}
  ]
  },
@@ -697,7 +705,9 @@ export const stages: Stage[] = [
  "When does a reducer clarify the model, and when is it ceremony?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "React docs - Extracting State Logic into a Reducer (https://react.dev/learn/extracting-state-logic-into-a-reducer)"
+ "React docs - Extracting State Logic into a Reducer (https://react.dev/learn/extracting-state-logic-into-a-reducer)",
+ "Redux Style Guide (https://redux.js.org/style-guide/)",
+ "Redux docs - Prerequisite Reducer Concepts (https://redux.js.org/usage/structuring-reducers/prerequisite-concepts)"
  ]}
  ]
  },
@@ -716,7 +726,8 @@ export const stages: Stage[] = [
  "Where should Suspense boundaries live in a real app?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "React docs - Suspense (https://react.dev/reference/react/Suspense)"
+ "React docs - Suspense (https://react.dev/reference/react/Suspense)",
+ "Developer Way - React Suspense (https://www.developerway.com/posts/react-suspense)"
  ]}
  ]
  }
@@ -762,7 +773,8 @@ export const stages: Stage[] = [
  "How do client and server components compose together in one tree?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Next.js - Server and Client composition patterns (https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns)"
+ "Next.js - Server and Client composition patterns (https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns)",
+ "Lee Robinson - Common mistakes with the Next.js App Router and how to fix them (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them)"
  ]}
  ]
  },
@@ -781,7 +793,8 @@ export const stages: Stage[] = [
  "How do you isolate interactivity without converting whole sections unnecessarily?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Next.js - Client Components (https://nextjs.org/docs/app/building-your-application/rendering/client-components)"
+ "Next.js - Client Components (https://nextjs.org/docs/app/building-your-application/rendering/client-components)",
+ "Understanding React Server Components - Josh Comeau (https://www.joshwcomeau.com/react/server-components/)"
  ]}
  ]
  },
@@ -800,7 +813,8 @@ export const stages: Stage[] = [
  "What logic still belongs in explicit APIs or services?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Next.js - Server Actions and Mutations (https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)"
+ "Next.js - Server Actions and Mutations (https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)",
+ "Vercel - Common mistakes with Server Actions (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them#using-server-actions-without-considering-cache-behavior)"
  ]}
  ]
  },
@@ -819,7 +833,8 @@ export const stages: Stage[] = [
  "Where should Suspense boundaries live in the tree?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Next.js - Loading UI and Streaming (https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)"
+ "Next.js - Loading UI and Streaming (https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)",
+ "Developer Way - React Suspense (https://www.developerway.com/posts/react-suspense)"
  ]}
  ]
  }
@@ -846,7 +861,8 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "Next.js docs (https://nextjs.org/docs)",
- "Next.js - Pages Router docs (https://nextjs.org/docs/pages)"
+ "Next.js - Pages Router docs (https://nextjs.org/docs/pages)",
+ "Lee Robinson - Common mistakes with the Next.js App Router and how to fix them (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them)"
  ]}
  ]
  },
@@ -865,7 +881,8 @@ export const stages: Stage[] = [
  "What do route groups and parallel routes buy you?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Next.js - Routing fundamentals (https://nextjs.org/docs/app/building-your-application/routing)"
+ "Next.js - Routing fundamentals (https://nextjs.org/docs/app/building-your-application/routing)",
+ "Leerob - The App Router Patterns I Wish I Knew Earlier (https://www.youtube.com/@leerob)"
  ]}
  ]
  },
@@ -884,7 +901,8 @@ export const stages: Stage[] = [
  "When should you opt out of caching?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Next.js - Data fetching, caching, and revalidating (https://nextjs.org/docs/app/building-your-application/data-fetching)"
+ "Next.js - Data fetching, caching, and revalidating (https://nextjs.org/docs/app/building-your-application/data-fetching)",
+ "Lee Robinson - Common mistakes with the Next.js App Router and how to fix them (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them#using-server-and-client-components-together)"
  ]}
  ]
  },
@@ -903,7 +921,8 @@ export const stages: Stage[] = [
  "When is ISR a better tradeoff than full SSR?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Next.js - Rendering (https://nextjs.org/docs/app/building-your-application/rendering)"
+ "Next.js - Rendering (https://nextjs.org/docs/app/building-your-application/rendering)",
+ "Patterns.dev - Rendering Patterns (https://www.patterns.dev/react/render-props-pattern/)"
  ]}
  ]
  },
@@ -923,7 +942,8 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "Next.js - Middleware (https://nextjs.org/docs/app/building-your-application/routing/middleware)",
- "Next.js - Route Handlers (https://nextjs.org/docs/app/building-your-application/routing/route-handlers)"
+ "Next.js - Route Handlers (https://nextjs.org/docs/app/building-your-application/routing/route-handlers)",
+ "Lee Robinson - Common mistakes with the Next.js App Router and how to fix them (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them)"
  ]}
  ]
  },
@@ -1052,7 +1072,8 @@ export const stages: Stage[] = [
  "Chrome DevTools - Inspect CSS grid and flexbox (https://developer.chrome.com/docs/devtools/css/grid)",
  "Chrome DevTools - JavaScript debugging (https://developer.chrome.com/docs/devtools/javascript/)",
  "Chrome DevTools - Network panel (https://developer.chrome.com/docs/devtools/network/)",
- "Chrome DevTools - Performance panel (https://developer.chrome.com/docs/devtools/performance/)"
+ "Chrome DevTools - Performance panel (https://developer.chrome.com/docs/devtools/performance/)",
+ "Addy Osmani - Performance tooling and modern debugging (https://addyosmani.com/blog/performance-tools/)"
  ]}
  ]
  },
@@ -1068,7 +1089,8 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "ESLint docs (https://eslint.org/docs/latest/)",
- "Prettier docs (https://prettier.io/docs/)"
+ "Prettier docs (https://prettier.io/docs/)",
+ "Why Prettier? (https://prettier.io/docs/why-prettier)"
  ]}
  ]
  }
