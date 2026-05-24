@@ -1143,6 +1143,7 @@ export const stages: Stage[] = [
  "Kent C. Dodds (https://kentcdodds.com/)",
  "Dan Abramov (https://overreacted.io/)",
  "Josh W. Comeau (https://www.joshwcomeau.com/)",
+ "Kevin Powell (https://www.kevinpowell.co/)",
  "TkDodo (https://tkdodo.eu/blog)",
  "Mark Erikson (https://blog.isquaredsoftware.com/)",
  "Adrian Roselli (https://adrianroselli.com/)",
