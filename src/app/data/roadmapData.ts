@@ -608,9 +608,9 @@ export const stages: Stage[] = [
  sub: "One of React's cleanest answers to growing complexity.",
  sections: [
  { h: "What matters here", items: [
- "Components can take other components as children or props",
+ "**Components can take other components as children or props**",
  "Composition often scales better than adding more configuration props",
- "Children, render props, and headless component patterns all live in this family"
+ "Children, render props, and components that provide logic without forcing a fixed UI all live in this family"
  ]},
  { h: "Things worth asking", items: [
  "When does a component become hard to use because it has too many props?",
