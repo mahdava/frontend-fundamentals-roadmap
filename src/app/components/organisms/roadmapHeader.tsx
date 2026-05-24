@@ -11,7 +11,7 @@ export const RoadmapHeader = ({ stages }: RoadmapHeaderProps) => {
     <header className="mx-auto max-w-[980px] px-6 pb-8 pt-12">
       <div className="rounded-[20px] border border-card-border/80 bg-card/90 px-6 py-7 shadow-card backdrop-blur-sm sm:px-8">
         <Typography component="p" variant="eyebrow" tone="accent" className="mb-3">
-          Browse topics
+          (more or less)
         </Typography>
         <Typography component="h1" variant="display" className="max-w-[12ch]">
           Frontend Onboarding Roadmap
