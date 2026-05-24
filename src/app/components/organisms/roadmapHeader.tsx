@@ -17,8 +17,13 @@ export const RoadmapHeader = ({ stages }: RoadmapHeaderProps) => {
           Frontend Onboarding Roadmap
         </Typography>
         <Typography className="mt-3 max-w-[66ch]" variant="bodyLg" tone="muted">
-          A structured path for getting comfortable with modern frontend work, from fundamentals and React thinking to
-          Next.js patterns and adjacent tooling.
+          A somewhat structured path for getting comfortable with modern frontend work, from fundamentals and React
+          thinking to Next.js patterns and adjacent tooling. Just throwing things here I think that would be good to
+          check no matter what.
+          {" "}
+          <span role="img" aria-label="smiling face with smiling eyes">
+            😊
+          </span>
         </Typography>
         <Typography className="mt-3 max-w-[62ch]" variant="bodySm" tone="muted">
           Use the stages as a map, then open topics for the concepts, questions, and resources worth spending real time
