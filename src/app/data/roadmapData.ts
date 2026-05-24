@@ -1122,8 +1122,8 @@ export const stages: Stage[] = [
  "Anthropic - Prompt engineering overview (https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)",
  "Simon Willison - Things we learned about LLMs in 2024 (https://simonwillison.net/2024/Dec/31/llms-in-2024/)",
  "Simon Willison - Prompt injection and data exfiltration in LLM-powered applications (https://simonwillison.net/2024/Jun/6/prompt-injection/)",
- "Kent C. Dodds - Use AI as a senior pair programmer, not a replacement for thinking (https://www.epicreact.dev/)",
- "Josh W. Comeau - How I use AI (https://www.joshwcomeau.com/blog/)"
+ "Ethan Mollick - Centaurs and Cyborgs on the Jagged Frontier (https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged)",
+ "Ethan Mollick - My approach to using AI (https://www.oneusefulthing.org/p/my-ai-skeptic-friends-are-all-nuts)"
  ]}
  ]
  }
