@@ -1102,6 +1102,42 @@ export const stages: Stage[] = [
  ]
  },
  {
+ title: "Internationalization",
+ hint: "Design for more than one language from the start",
+ sub: "Internationalization becomes much easier when it is treated as part of the architecture instead of a late-stage patch. This includes text, formatting, routing, and layout considerations.",
+ sections: [
+ { h: "What matters here", items: [
+ "Internationalization touches copy, routing, dates, numbers, currencies, and sometimes layout direction",
+ "It is easier to support multiple locales when you avoid hardcoding strings and assumptions early",
+ "In **Next.js**, internationalization often also affects routing and how content is loaded per locale"
+ ]},
+ { h: "Further reading", isResources: true, items: [
+ "Next.js - Internationalization (https://nextjs.org/docs/app/building-your-application/routing/internationalization)",
+ "next-intl docs (https://next-intl.dev/)",
+ "MDN - Intl (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)",
+ "Phrase - JavaScript internationalization guide (https://phrase.com/blog/posts/step-step-guide-javascript-localization/)"
+ ]}
+ ]
+ },
+ {
+ title: "CMS and structured content",
+ hint: "Content should be modeled, not buried in code",
+ sub: "As soon as content needs editing, reuse, localization, or collaboration, a CMS starts becoming relevant. The important skill is not picking one tool, but understanding how structured content shapes the frontend.",
+ sections: [
+ { h: "What matters here", items: [
+ "A CMS helps separate content editing from code changes",
+ "Structured content makes it easier to reuse the same information across pages, components, and channels",
+ "The frontend still needs to decide how content is rendered, validated, localized, and previewed"
+ ]},
+ { h: "Further reading", isResources: true, items: [
+ "Prismic docs (https://prismic.io/docs)",
+ "Prismic + Next.js (https://prismic.io/docs/nextjs)",
+ "Contentful developer docs (https://www.contentful.com/developers/docs/)",
+ "Sanity docs (https://www.sanity.io/docs)"
+ ]}
+ ]
+ },
+ {
  title: "AI as a learning and coding assistant",
  hint: "Use it to accelerate, not to outsource understanding",
  sub: "AI can help across every stage of this roadmap, but it is most useful when you use it to clarify concepts, inspect unfamiliar code, and practice better questions rather than blindly generating answers.",
