@@ -1039,21 +1039,34 @@ export const stages: Stage[] = [
  ]
  },
  {
- title: "Build tooling awareness",
- hint: "Enough to debug, not enough to obsess",
- sub: "You do not need to become a tooling expert, but you should be comfortable inspecting the browser, reading warnings, and using linting and formatting as part of the feedback loop.",
+ title: "Chrome DevTools",
+ hint: "Learn to inspect before you guess",
+ sub: "You do not need to master every panel, but you should be comfortable using the browser inspector to understand what your app is doing.",
  sections: [
  { h: "What matters here", items: [
  "**Chrome DevTools** is one of the most important debugging tools in frontend work",
- "The browser inspector helps you understand layout, styles, network activity, performance, and runtime behavior",
- "**ESLint** and formatters are part of the feedback loop, not afterthoughts"
+ "The browser inspector helps you understand layout, styles, network activity, performance, and runtime behavior"
  ]},
  { h: "Further reading", isResources: true, items: [
  "Chrome DevTools docs (https://developer.chrome.com/docs/devtools/)",
  "Chrome DevTools - Inspect CSS grid and flexbox (https://developer.chrome.com/docs/devtools/css/grid)",
  "Chrome DevTools - JavaScript debugging (https://developer.chrome.com/docs/devtools/javascript/)",
  "Chrome DevTools - Network panel (https://developer.chrome.com/docs/devtools/network/)",
- "Chrome DevTools - Performance panel (https://developer.chrome.com/docs/devtools/performance/)",
+ "Chrome DevTools - Performance panel (https://developer.chrome.com/docs/devtools/performance/)"
+ ]}
+ ]
+ },
+ {
+ title: "Linting and formatting",
+ hint: "Feedback before bugs spread",
+ sub: "Linting and formatting are part of the everyday feedback loop. They help keep code readable, consistent, and easier to review.",
+ sections: [
+ { h: "What matters here", items: [
+ "**ESLint** helps catch mistakes and enforce code quality rules",
+ "Formatters like **Prettier** reduce style debates and keep code consistent",
+ "These tools work best when they are part of the normal workflow, not an afterthought"
+ ]},
+ { h: "Further reading", isResources: true, items: [
  "ESLint docs (https://eslint.org/docs/latest/)",
  "Prettier docs (https://prettier.io/docs/)"
  ]}
