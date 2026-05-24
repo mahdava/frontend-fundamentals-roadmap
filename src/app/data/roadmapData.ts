@@ -1146,6 +1146,10 @@ export const stages: Stage[] = [
  "TkDodo (https://tkdodo.eu/blog)",
  "Mark Erikson (https://blog.isquaredsoftware.com/)",
  "Adrian Roselli (https://adrianroselli.com/)",
+ "Sara Soueidan (https://www.sarasoueidan.com/)",
+ "Scott O'Hara (https://www.scottohara.me/)",
+ "Marcy Sutton (https://www.marcy.codes/)",
+ "Léonie Watson (https://tink.uk/)",
  "Lee Robinson (https://leerob.io/)"
  ]}
  ]
