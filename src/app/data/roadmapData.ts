@@ -133,6 +133,7 @@ export const stages: Stage[] = [
  "React docs - Passing JSX as children (https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children)",
  "React docs - Passing Props to a Component (https://react.dev/learn/passing-props-to-a-component)",
  "React docs - Composition vs Inheritance (https://legacy.reactjs.org/docs/composition-vs-inheritance.html)",
+ "Patterns.dev - Compound Pattern (https://www.patterns.dev/react/compound-pattern/)",
  "Vue docs - Slots (https://vuejs.org/guide/components/slots.html)",
  "Vue docs - Fallthrough Attributes (https://vuejs.org/guide/components/attrs.html)"
  ]}
@@ -161,7 +162,8 @@ export const stages: Stage[] = [
  "Vue docs - Single-file components (https://vuejs.org/guide/scaling-up/sfc.html)",
  "Vue docs - <script setup> (https://vuejs.org/api/sfc-script-setup.html)",
  "React docs - Your First Component (https://react.dev/learn/your-first-component)",
- "React docs - Importing and exporting components (https://react.dev/learn/importing-and-exporting-components)"
+ "React docs - Importing and exporting components (https://react.dev/learn/importing-and-exporting-components)",
+ "How Does React Tell a Class from a Function? - Dan Abramov (https://overreacted.io/how-does-react-tell-a-class-from-a-function/)"
  ]}
  ]
  }
@@ -345,7 +347,8 @@ export const stages: Stage[] = [
  "javascript.info - Promises, async/await (https://javascript.info/async)",
  "MDN - Using promises (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)",
  "MDN - async function (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)",
- "MDN - Promise.all() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)"
+ "MDN - Promise.all() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)",
+ "Async JavaScript: From Callbacks to Promises to Async/Await - Tyler McGinnis (https://ui.dev/async-javascript-from-callbacks-to-promises-to-async-await)"
  ]}
  ]
  },
@@ -364,7 +367,8 @@ export const stages: Stage[] = [
  "How does code splitting change what users actually download?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "MDN - JavaScript modules (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)"
+ "MDN - JavaScript modules (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)",
+ "ES Modules: A Cartoon Deep-Dive - Lin Clark (https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)"
  ]}
  ]
  },
@@ -388,7 +392,8 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "TypeScript Handbook (https://www.typescriptlang.org/docs/handbook/intro.html)",
- "Total TypeScript - Beginners tutorial (https://www.totaltypescript.com/tutorials/beginners-typescript)"
+ "Total TypeScript - Beginners tutorial (https://www.totaltypescript.com/tutorials/beginners-typescript)",
+ "React TypeScript Cheatsheet (https://react-typescript-cheatsheet.netlify.app/)"
  ]}
  ]
  },
@@ -408,7 +413,8 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "TypeScript Handbook - Narrowing (https://www.typescriptlang.org/docs/handbook/2/narrowing.html)",
- "TypeScript Handbook - Unions and intersections (https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html)"
+ "TypeScript Handbook - Unions and intersections (https://www.typescriptlang.org/docs/handbook/unions-and-intersections.html)",
+ "Making Impossible States Impossible - Richard Feldman (https://www.youtube.com/watch?v=IcgmSRJHu_8)"
  ]}
  ]
  }
@@ -600,7 +606,7 @@ export const stages: Stage[] = [
  {
  id: 4, anchor: "stage-4", tag: "Stage 4",
  title: "React architecture patterns",
- desc: "Once an app grows past a handful of components, local decisions start becoming architectural ones. This stage is about state placement, composition, context, forms, and the patterns that help a React codebase stay flexible instead of quietly turning brittle.",
+ desc: "Once a React app grows past a handful of components, small decisions start having architectural consequences. This stage is about state placement, composition, context, forms, and the patterns that help a codebase stay clear and flexible as it grows.",
  topics: [
  {
  title: "Composition over configuration",
@@ -608,9 +614,9 @@ export const stages: Stage[] = [
  sub: "One of React's cleanest answers to growing complexity.",
  sections: [
  { h: "What matters here", items: [
- "Components can take other components as children or props",
+ "**Components can take other components as children or props**",
  "Composition often scales better than adding more configuration props",
- "Children, render props, and headless component patterns all live in this family"
+ "Children, render props, and components that provide logic without forcing a fixed UI all live in this family"
  ]},
  { h: "Things worth asking", items: [
  "When does a component become hard to use because it has too many props?",
@@ -627,9 +633,9 @@ export const stages: Stage[] = [
  sub: "The default habit that prevents a surprising number of architecture mistakes.",
  sections: [
  { h: "What matters here", items: [
- "Keep state as close as possible to the components that need it",
+ "**Keep state as close as possible to the components that need it**",
  "Lift state only when several components genuinely need to share it",
- "Global state is sometimes necessary, but it should not be the first instinct"
+ "**Global state is sometimes necessary**, but it should not be the first instinct"
  ]},
  { h: "Things worth asking", items: [
  "How do you decide where a piece of state should live?",
@@ -647,10 +653,10 @@ export const stages: Stage[] = [
  sub: "Context solves prop drilling, but it does not magically solve state design.",
  sections: [
  { h: "What matters here", items: [
- "Context broadcasts a value to a subtree",
+ "**Context broadcasts a value to a subtree**",
  "Every consumer re-renders when the context value changes",
  "It works best for low-frequency or stable values like theme, auth, or locale",
- "When everything goes into Context, performance and clarity both tend to suffer"
+ "**When everything goes into Context, performance and clarity both tend to suffer**"
  ]},
  { h: "Things worth asking", items: [
  "When is Context the right tool, and when is it not?",
@@ -667,10 +673,10 @@ export const stages: Stage[] = [
  sub: "Forms expose every weak spot in your state model.",
  sections: [
  { h: "What matters here", items: [
- "Controlled inputs keep the value in React state",
- "Uncontrolled inputs let the DOM keep the value until you need it",
+ "**Controlled inputs keep the value in React state**",
+ "**Uncontrolled inputs let the DOM keep the value until you need it**",
  "Validation can be eager, lazy, or hybrid",
- "Libraries like react-hook-form earn their keep once forms become genuinely non-trivial"
+ "**Libraries like react-hook-form earn their keep once forms become genuinely non-trivial**"
  ]},
  { h: "Things worth asking", items: [
  "When is uncontrolled good enough?",
@@ -678,7 +684,9 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "React docs - input component (https://react.dev/reference/react-dom/components/input)",
- "react-hook-form (https://react-hook-form.com/)"
+ "react-hook-form (https://react-hook-form.com/)",
+ "Improve the Performance of your React Forms - Epic React (https://www.epicreact.dev/improve-the-performance-of-your-react-forms)",
+ "How to Build an Accessible React Form - Epic React (https://www.epicreact.dev/how-to-build-an-accessible-react-form)"
  ]}
  ]
  },
@@ -697,7 +705,9 @@ export const stages: Stage[] = [
  "When does a reducer clarify the model, and when is it ceremony?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "React docs - Extracting State Logic into a Reducer (https://react.dev/learn/extracting-state-logic-into-a-reducer)"
+ "React docs - Extracting State Logic into a Reducer (https://react.dev/learn/extracting-state-logic-into-a-reducer)",
+ "Redux Style Guide (https://redux.js.org/style-guide/)",
+ "Redux docs - Prerequisite Reducer Concepts (https://redux.js.org/usage/structuring-reducers/prerequisite-concepts)"
  ]}
  ]
  },
@@ -707,8 +717,8 @@ export const stages: Stage[] = [
  sub: "These are not edge concerns. They are part of the interface.",
  sections: [
  { h: "What matters here", items: [
- "Error boundaries catch rendering errors in a subtree",
- "Suspense lets a subtree wait and show a fallback",
+ "**Error boundaries catch rendering errors in a subtree**",
+ "**Suspense lets a subtree wait and show a fallback**",
  "Good async UI depends on deciding where waiting and failure should surface"
  ]},
  { h: "Things worth asking", items: [
@@ -716,7 +726,8 @@ export const stages: Stage[] = [
  "Where should Suspense boundaries live in a real app?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "React docs - Suspense (https://react.dev/reference/react/Suspense)"
+ "React docs - Suspense (https://react.dev/reference/react/Suspense)",
+ "Developer Way - React Suspense (https://www.developerway.com/posts/react-suspense)"
  ]}
  ]
  }
@@ -725,7 +736,7 @@ export const stages: Stage[] = [
  {
  id: 5, anchor: "stage-5", tag: "Stage 5",
  title: "Client vs server components",
- desc: "This is one of the biggest conceptual shifts in the React ecosystem. It is not just a new feature to memorize, but a different way of thinking about where code runs, what gets shipped to the browser, and how responsibility is split across the app.",
+ desc: "This is one of the biggest conceptual shifts in modern React. It is not just a feature to learn, but a different way of thinking about where code runs, what gets sent to the browser, and how responsibility is split across the app.",
  topics: [
  {
  title: "Why the split exists",
@@ -734,8 +745,8 @@ export const stages: Stage[] = [
  sections: [
  { h: "What matters here", items: [
  "Traditional React often ships large amounts of client JavaScript before the app feels ready",
- "Server components keep more work on the server and send less JavaScript to the browser",
- "The result can be a simpler client and a smaller performance bill"
+ "**Server components keep more work on the server and send less JavaScript to the browser**",
+ "**The result can be a simpler client and a smaller performance bill**"
  ]},
  { h: "Things worth asking", items: [
  "What was expensive about the all-client model?",
@@ -753,8 +764,8 @@ export const stages: Stage[] = [
  sub: "Server components and client components are not interchangeable, and that is the point.",
  sections: [
  { h: "What matters here", items: [
- "Server components can access backend resources directly but cannot use state, effects, or browser APIs",
- "Client components can use interactivity, browser APIs, and event handlers",
+ "**Server components can access backend resources directly but cannot use state, effects, or browser APIs**",
+ "**Client components can use interactivity, browser APIs, and event handlers**",
  "The split is about putting code in the environment where it makes the most sense"
  ]},
  { h: "Things worth asking", items: [
@@ -762,7 +773,8 @@ export const stages: Stage[] = [
  "How do client and server components compose together in one tree?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Next.js - Server and Client composition patterns (https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns)"
+ "Next.js - Server and Client composition patterns (https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns)",
+ "Lee Robinson - Common mistakes with the Next.js App Router and how to fix them (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them)"
  ]}
  ]
  },
@@ -772,7 +784,7 @@ export const stages: Stage[] = [
  sub: "A small line with big consequences.",
  sections: [
  { h: "What matters here", items: [
- "use client marks a file and its imports as client-side code",
+ "**use client** marks a file and its imports as client-side code",
  "Moving the boundary too high pushes more code into the browser than you need",
  "Keeping the boundary low preserves the benefits of server-first rendering"
  ]},
@@ -781,7 +793,8 @@ export const stages: Stage[] = [
  "How do you isolate interactivity without converting whole sections unnecessarily?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Next.js - Client Components (https://nextjs.org/docs/app/building-your-application/rendering/client-components)"
+ "Next.js - Client Components (https://nextjs.org/docs/app/building-your-application/rendering/client-components)",
+ "Understanding React Server Components - Josh Comeau (https://www.joshwcomeau.com/react/server-components/)"
  ]}
  ]
  },
@@ -800,7 +813,8 @@ export const stages: Stage[] = [
  "What logic still belongs in explicit APIs or services?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Next.js - Server Actions and Mutations (https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)"
+ "Next.js - Server Actions and Mutations (https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations)",
+ "Vercel - Common mistakes with Server Actions (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them#using-server-actions-without-considering-cache-behavior)"
  ]}
  ]
  },
@@ -810,7 +824,7 @@ export const stages: Stage[] = [
  sub: "One of the most practical benefits of the new model.",
  sections: [
  { h: "What matters here", items: [
- "The server can stream HTML in chunks instead of waiting for everything",
+ "**The server can stream HTML in chunks instead of waiting for everything**",
  "Suspense boundaries define what can wait and what should render now",
  "Good boundary placement changes perceived performance more than many micro-optimizations"
  ]},
@@ -819,7 +833,8 @@ export const stages: Stage[] = [
  "Where should Suspense boundaries live in the tree?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Next.js - Loading UI and Streaming (https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)"
+ "Next.js - Loading UI and Streaming (https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)",
+ "Developer Way - React Suspense (https://www.developerway.com/posts/react-suspense)"
  ]}
  ]
  }
@@ -828,7 +843,7 @@ export const stages: Stage[] = [
  {
  id: 6, anchor: "stage-6", tag: "Stage 6",
  title: "Next.js",
- desc: "For many developers, this is where React becomes a real application stack. Prioritize the App Router, understand the full-stack model it introduces, and learn just enough of the Pages Router to stay oriented when older codebases still rely on it.",
+ desc: "For many developers, this is where React starts to feel like a full application stack. Focus on the App Router, understand the full-stack model it introduces, and learn just enough of the Pages Router to stay oriented in older codebases.",
  topics: [
  {
  title: "App Router vs Pages Router",
@@ -836,13 +851,18 @@ export const stages: Stage[] = [
  sub: "Know both exist, learn the App Router first, and recognize older Pages Router patterns when you see them.",
  sections: [
  { h: "What matters here", items: [
- "The App Router is the modern default",
- "The Pages Router still appears in many older codebases",
- "They overlap in purpose, but not in mental model"
+ "**The App Router is the modern default**",
+ "The **Pages Router** still appears in many older codebases",
+ "**They overlap in purpose, but not in mental model**",
+ "The **App Router** is built around layouts, nested routing, server components, and streaming",
+ "The **Pages Router** is more page-based and client-oriented in how many developers first learned Next.js",
+ "One of the biggest benefits of the **App Router** is that data fetching, layouts, and server-first rendering fit together more naturally",
+ "Learning the **App Router** first gives you a better foundation for modern Next.js, even if you still need to recognize older Pages Router patterns"
  ]},
  { h: "Further reading", isResources: true, items: [
  "Next.js docs (https://nextjs.org/docs)",
- "Next.js - Pages Router docs (https://nextjs.org/docs/pages)"
+ "Next.js - Pages Router docs (https://nextjs.org/docs/pages)",
+ "Lee Robinson - Common mistakes with the Next.js App Router and how to fix them (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them)"
  ]}
  ]
  },
@@ -852,54 +872,61 @@ export const stages: Stage[] = [
  sub: "The filesystem is part of the framework API.",
  sections: [
  { h: "What matters here", items: [
- "page.tsx creates a route",
- "layout.tsx, loading.tsx, error.tsx, and not-found.tsx add structure and behavior",
- "Dynamic and catch-all segments shape URLs directly"
+ "**page.tsx** creates a route",
+ "**layout.tsx**, **loading.tsx**, **error.tsx**, and **not-found.tsx** add structure and behavior",
+ "**Dynamic and catch-all segments shape URLs directly**"
  ]},
  { h: "Things worth asking", items: [
  "How do nested layouts persist across navigations?",
  "What do route groups and parallel routes buy you?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Next.js - Routing fundamentals (https://nextjs.org/docs/app/building-your-application/routing)"
+ "Next.js - Routing fundamentals (https://nextjs.org/docs/app/building-your-application/routing)",
+ "Leerob - The App Router Patterns I Wish I Knew Earlier (https://www.youtube.com/@leerob)"
  ]}
  ]
  },
  {
  title: "Data fetching",
  hint: "Fetch where the work belongs",
- sub: "Server components changed the default answer here.",
+ sub: "In modern Next.js, data fetching is no longer a separate concern bolted onto the app. It is part of the rendering model.",
  sections: [
  { h: "What matters here", items: [
- "Server components can fetch directly",
- "Next.js extends fetch with caching and revalidation behavior",
- "Client-side fetching still matters for interactive or constantly changing data"
+ "Server components often make server-side fetching the default answer",
+ "Next.js extends **fetch** with caching and revalidation behavior, so data fetching also becomes a rendering decision",
+ "**Client-side fetching still matters for interactive or constantly changing data**",
+ "The important question is not just where you *can* fetch, but where the data belongs and how fresh it needs to be"
  ]},
  { h: "Things worth asking", items: [
  "When should data be fetched on the server rather than the client?",
  "When should you opt out of caching?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Next.js - Data fetching, caching, and revalidating (https://nextjs.org/docs/app/building-your-application/data-fetching)"
+ "Next.js - Data fetching, caching, and revalidating (https://nextjs.org/docs/app/building-your-application/data-fetching)",
+ "Lee Robinson - Common mistakes with the Next.js App Router and how to fix them (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them#using-server-and-client-components-together)",
+ "Vercel - Understanding caching in the App Router (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them#assuming-fetch-is-never-cached)"
  ]}
  ]
  },
  {
  title: "Rendering modes",
  hint: "Static, dynamic, and in between",
- sub: "The important thing is not memorizing acronyms, but understanding the tradeoffs.",
+ sub: "The important thing is not memorizing acronyms, but understanding the tradeoffs between speed, freshness, and cacheability.",
  sections: [
  { h: "What matters here", items: [
- "Static rendering is fast and cache-friendly",
+ "**Static rendering is fast and cache-friendly** because the result can be prepared ahead of time",
  "Dynamic rendering trades cacheability for request-time freshness",
- "ISR sits in the middle with controlled revalidation"
+ "**ISR sits in the middle with controlled revalidation**",
+ "The real question is how fresh the page needs to be, and what performance tradeoff you are willing to make"
  ]},
  { h: "Things worth asking", items: [
  "What makes a route dynamic rather than static?",
  "When is ISR a better tradeoff than full SSR?"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Next.js - Rendering (https://nextjs.org/docs/app/building-your-application/rendering)"
+ "Next.js - Rendering (https://nextjs.org/docs/app/building-your-application/rendering)",
+ "Lee Robinson - Static vs Dynamic Rendering in the App Router (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them#misunderstanding-static-and-dynamic-rendering)",
+ "web.dev - Rendering on the Web (https://web.dev/rendering-on-the-web/)"
  ]}
  ]
  },
@@ -910,7 +937,8 @@ export const stages: Stage[] = [
  sections: [
  { h: "What matters here", items: [
  "Route handlers are API endpoints inside the app router",
- "Middleware runs before routing and can redirect, rewrite, or gate access",
+ "**Middleware runs before routing and can redirect, rewrite, or gate access**",
+ "Middleware is not a general place for business logic, it is for work that needs to happen before the request reaches the route",
  "Choosing the wrong one usually means using the framework at the wrong layer"
  ]},
  { h: "Things worth asking", items: [
@@ -919,22 +947,28 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "Next.js - Middleware (https://nextjs.org/docs/app/building-your-application/routing/middleware)",
- "Next.js - Route Handlers (https://nextjs.org/docs/app/building-your-application/routing/route-handlers)"
+ "Next.js - Route Handlers (https://nextjs.org/docs/app/building-your-application/routing/route-handlers)",
+ "Lee Robinson - Common mistakes with the Next.js App Router and how to fix them (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them)"
  ]}
  ]
  },
  {
  title: "Metadata, images, and fonts",
  hint: "Built-in optimizations worth understanding",
- sub: "These are small pieces of the framework that have outsized practical impact.",
+ sub: "These are smaller parts of the framework, but they have a surprisingly large effect on performance, polish, and SEO.",
  sections: [
  { h: "What matters here", items: [
  "Metadata APIs handle page-level SEO data",
- "next/image helps with responsive image performance",
- "next/font reduces layout shift and removes external font hosting friction"
+ "**next/image** helps with responsive image performance",
+ "**next/font** reduces layout shift and removes external font hosting friction",
+ "These features matter because they solve common production problems without asking you to build the plumbing yourself"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Next.js - Optimizing (https://nextjs.org/docs/app/building-your-application/optimizing)"
+ "Next.js - Metadata and OG images (https://nextjs.org/docs/app/building-your-application/optimizing/metadata)",
+ "Next.js - Image Optimization (https://nextjs.org/docs/app/building-your-application/optimizing/images)",
+ "Next.js - Font Optimization (https://nextjs.org/docs/app/building-your-application/optimizing/fonts)",
+ "Next.js - Optimizing (https://nextjs.org/docs/app/building-your-application/optimizing)",
+ "Vercel - Common mistakes with built-in Next.js features (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them#misusing-built-in-next-js-features)"
  ]}
  ]
  }
@@ -943,16 +977,16 @@ export const stages: Stage[] = [
  {
  id: 7, anchor: "stage-7", tag: "Stage 7",
  title: "Adjacent essentials",
- desc: "These are the tools and practices that quietly shape day-to-day frontend work: styling, accessibility, testing, client-side data fetching, and developer tooling. They are adjacent only in the sense that React does not own them, not because they are optional.",
+ desc: "These are the tools and practices that shape day-to-day frontend work: styling, accessibility, testing, client-side data fetching, and developer tooling. They are adjacent only in the sense that React does not own them, not because they matter less.",
  topics: [
  {
- title: "Styling and CSS architecture",
- hint: "Beyond just picking a library",
- sub: "The real question is how styles stay readable, consistent, and scalable as the app grows.",
+ title: "Tailwind and CSS fundamentals",
+ hint: "Utility classes still need a CSS brain",
+ sub: "Tailwind can make styling faster and more consistent, but it does not replace understanding how CSS works.",
  sections: [
  { h: "What matters here", items: [
  "You still need a CSS mental model even when using utility classes",
- "Tailwind optimizes speed and consistency, but it is not a substitute for understanding layout, specificity, and the cascade",
+ "**Tailwind optimizes speed and consistency, but it is not a substitute for understanding layout, specificity, and the cascade**",
  "Design tokens and naming discipline matter no matter which styling approach you pick"
  ]},
  { h: "Things worth asking", items: [
@@ -961,6 +995,9 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "Tailwind CSS docs (https://tailwindcss.com/docs)",
+ "Tailwind CSS - Utility-first fundamentals (https://tailwindcss.com/docs/styling-with-utility-classes)",
+ "MDN - CSS first steps (https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps)",
+ "MDN - Specificity (https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity)",
  "Josh Comeau - CSS for JavaScript Developers (https://www.joshwcomeau.com/)",
  "Refactoring UI (https://www.refactoringui.com/)"
  ]}
@@ -968,18 +1005,19 @@ export const stages: Stage[] = [
  },
  {
  title: "Client-side data fetching",
- hint: "SWR and TanStack Query",
- sub: "When server components are not the answer, these tools usually are.",
+ hint: "Caching, revalidation, and mutations",
+ sub: "When server components are not the answer, client-side fetching tools can handle caching, refreshes, and mutations much more cleanly than ad-hoc effect code.",
  sections: [
  { h: "What matters here", items: [
- "These libraries maintain a client-side cache keyed by request identity",
+ "These tools maintain a client-side cache keyed by request identity",
  "They handle revalidation, background refreshes, and mutation flows far better than ad-hoc effect code",
  "They are often the right answer for interactive dashboards, optimistic UI, and user-driven refreshes"
  ]},
  { h: "Further reading", isResources: true, items: [
  "SWR docs (https://swr.vercel.app/)",
- "TanStack Query docs (https://tanstack.com/query/latest/docs/framework/react/overview)",
- "TkDodo - Practical React Query (https://tkdodo.eu/blog/practical-react-query)"
+ "RTK Query docs - Overview (https://redux-toolkit.js.org/rtk-query/overview)",
+ "RTK Query docs - Queries (https://redux-toolkit.js.org/rtk-query/usage/queries)",
+ "RTK Query docs - Mutations (https://redux-toolkit.js.org/rtk-query/usage/mutations)"
  ]}
  ]
  },
@@ -995,8 +1033,11 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "MDN - Accessibility (https://developer.mozilla.org/en-US/docs/Learn/Accessibility)",
+ "web.dev - Learn Accessibility (https://web.dev/learn/accessibility)",
  "WebAIM articles (https://webaim.org/articles/)",
- "web.dev - Learn Accessibility (https://web.dev/learn/accessibility)"
+ "WAI-ARIA Authoring Practices Guide (https://www.w3.org/WAI/ARIA/apg/)",
+ "A11Y Project - Checklist (https://www.a11yproject.com/checklist/)",
+ "Adrian Roselli (https://adrianroselli.com/)"
  ]}
  ]
  },
@@ -1007,8 +1048,9 @@ export const stages: Stage[] = [
  sections: [
  { h: "What matters here", items: [
  "React Testing Library encourages testing the UI the way a user experiences it",
+ "**Jest** is a common choice for unit and integration tests in JavaScript projects",
  "Mock at the network boundary rather than inside component internals whenever possible",
- "End-to-end tests matter, but only for critical paths"
+ "**Playwright** is a strong choice for end-to-end coverage of critical user flows"
  ]},
  { h: "Things worth asking", items: [
  "What counts as implementation-detail testing, and why does it become brittle?",
@@ -1016,25 +1058,136 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "Testing Library docs (https://testing-library.com/docs/)",
+ "Jest docs (https://jestjs.io/docs/getting-started)",
+ "Playwright docs (https://playwright.dev/docs/intro)",
  "Kent C. Dodds - The Testing Trophy (https://kentcdodds.com/blog/the-testing-trophy-and-testing-classifications)",
  "MSW docs (https://mswjs.io/docs)"
  ]}
  ]
  },
  {
- title: "Build tooling awareness",
- hint: "Enough to debug, not enough to obsess",
- sub: "You do not need to become a bundler expert, but you should know what the moving pieces are.",
+ title: "Chrome DevTools",
+ hint: "Learn to inspect before you guess",
+ sub: "You do not need to master every panel, but you should be comfortable using the browser inspector to understand what your app is doing.",
  sections: [
  { h: "What matters here", items: [
- "Bundlers and dev servers prepare browser-ready code",
- "Package managers shape installation, workspace structure, and sometimes team velocity",
- "Linters, formatters, and type checking are part of the feedback loop, not afterthoughts"
+ "**Chrome DevTools** is one of the most important debugging tools in frontend work",
+ "The browser inspector helps you understand layout, styles, network activity, performance, and runtime behavior"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Vite guide (https://vitejs.dev/guide/)",
- "pnpm - Motivation (https://pnpm.io/motivation)",
- "Chrome DevTools docs (https://developer.chrome.com/docs/devtools/)"
+ "Chrome DevTools docs (https://developer.chrome.com/docs/devtools/)",
+ "Chrome DevTools - Inspect CSS grid and flexbox (https://developer.chrome.com/docs/devtools/css/grid)",
+ "Chrome DevTools - JavaScript debugging (https://developer.chrome.com/docs/devtools/javascript/)",
+ "Chrome DevTools - Network panel (https://developer.chrome.com/docs/devtools/network/)",
+ "Chrome DevTools - Performance panel (https://developer.chrome.com/docs/devtools/performance/)",
+ "Addy Osmani - Performance tooling and modern debugging (https://addyosmani.com/blog/performance-tools/)"
+ ]}
+ ]
+ },
+ {
+ title: "Linting and formatting",
+ hint: "Feedback before bugs spread",
+ sub: "Linting and formatting are part of the everyday feedback loop. They help keep code readable, consistent, and easier to review.",
+ sections: [
+ { h: "What matters here", items: [
+ "**ESLint** helps catch mistakes and enforce code quality rules",
+ "Formatters like **Prettier** reduce style debates and keep code consistent",
+ "These tools work best when they are part of the normal workflow, not an afterthought"
+ ]},
+ { h: "Further reading", isResources: true, items: [
+ "ESLint docs (https://eslint.org/docs/latest/)",
+ "Prettier docs (https://prettier.io/docs/)",
+ "Why Prettier? (https://prettier.io/docs/why-prettier)"
+ ]}
+ ]
+ },
+ {
+ title: "Internationalization",
+ hint: "Design for more than one language from the start",
+ sub: "Internationalization becomes much easier when it is treated as part of the architecture instead of a late-stage patch. This includes text, formatting, routing, and layout considerations.",
+ sections: [
+ { h: "What matters here", items: [
+ "Internationalization touches copy, routing, dates, numbers, currencies, and sometimes layout direction",
+ "It is easier to support multiple locales when you avoid hardcoding strings and assumptions early",
+ "In **Next.js**, internationalization often also affects routing and how content is loaded per locale"
+ ]},
+ { h: "Further reading", isResources: true, items: [
+ "Next.js - Internationalization (https://nextjs.org/docs/app/building-your-application/routing/internationalization)",
+ "next-intl docs (https://next-intl.dev/)",
+ "MDN - Intl (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)",
+ "Phrase - JavaScript internationalization guide (https://phrase.com/blog/posts/step-step-guide-javascript-localization/)"
+ ]}
+ ]
+ },
+ {
+ title: "CMS and structured content",
+ hint: "Content should be modeled, not buried in code",
+ sub: "As soon as content needs editing, reuse, localization, or collaboration, a CMS starts becoming relevant. The important skill is not picking one tool, but understanding how structured content shapes the frontend.",
+ sections: [
+ { h: "What matters here", items: [
+ "A CMS helps separate content editing from code changes",
+ "Structured content makes it easier to reuse the same information across pages, components, and channels",
+ "The frontend still needs to decide how content is rendered, validated, localized, and previewed"
+ ]},
+ { h: "Further reading", isResources: true, items: [
+ "Prismic docs (https://prismic.io/docs)",
+ "Prismic + Next.js (https://prismic.io/docs/nextjs)",
+ "Contentful developer docs (https://www.contentful.com/developers/docs/)",
+ "Sanity docs (https://www.sanity.io/docs)"
+ ]}
+ ]
+ },
+ {
+ title: "AI as a learning and coding assistant",
+ hint: "Use it to accelerate, not to outsource understanding",
+ sub: "AI can help across every stage of this roadmap, but it is most useful when you use it to clarify concepts, inspect unfamiliar code, and practice better questions rather than blindly generating answers.",
+ sections: [
+ { h: "What matters here", items: [
+ "AI can help explain unfamiliar syntax, React patterns, and framework concepts in simpler language",
+ "It is useful for turning error messages, type errors, and confusing code paths into something easier to reason about",
+ "It can help you compare approaches, draft examples, and generate small experiments when you are learning a new concept",
+ "It becomes much more valuable when you already know enough to question the answer, verify it, and ask for something more precise"
+ ]},
+ { h: "Things worth asking", items: [
+ "How do you use AI to understand a concept instead of just copying a solution?",
+ "What kinds of mistakes should you expect AI to make in React, Next.js, TypeScript, or accessibility work?",
+ "How can AI help you debug, write tests, or inspect performance without becoming a crutch?"
+ ]},
+ { h: "Further reading", isResources: true, items: [
+ "OpenAI - Prompting guide (https://platform.openai.com/docs/guides/prompt-engineering)",
+ "Anthropic - Prompt engineering overview (https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)",
+ "Simon Willison - Things we learned about LLMs in 2024 (https://simonwillison.net/2024/Dec/31/llms-in-2024/)",
+ "Simon Willison - Prompt injection and data exfiltration in LLM-powered applications (https://simonwillison.net/2024/Jun/6/prompt-injection/)",
+ "Ethan Mollick - Centaurs and Cyborgs on the Jagged Frontier (https://www.oneusefulthing.org/p/centaurs-and-cyborgs-on-the-jagged)",
+ "Ethan Mollick - My approach to using AI (https://www.oneusefulthing.org/p/my-ai-skeptic-friends-are-all-nuts)"
+ ]}
+ ]
+ },
+ {
+ title: "People to follow",
+ hint: "Good teachers shorten the learning curve",
+ sub: "A few strong voices can make the frontend world feel much less noisy. The goal is not to follow everyone, but to find teachers whose explanations make difficult ideas click.",
+ sections: [
+ { h: "What matters here", items: [
+ "Different people are useful for different things: React mental models, CSS, TypeScript, performance, accessibility, or keeping up with the ecosystem",
+ "Following a few thoughtful educators is often more useful than trying to consume everything at once",
+ "Good teachers do more than share tips, they help you build taste, vocabulary, and better instincts"
+ ]},
+ { h: "Further reading", isResources: true, items: [
+ "Fireship (https://www.youtube.com/@Fireship)",
+ "Web Dev Simplified (https://www.youtube.com/@WebDevSimplified)",
+ "Kent C. Dodds (https://kentcdodds.com/)",
+ "Dan Abramov (https://overreacted.io/)",
+ "Josh W. Comeau (https://www.joshwcomeau.com/)",
+ "Kevin Powell (https://www.kevinpowell.co/)",
+ "TkDodo (https://tkdodo.eu/blog)",
+ "Mark Erikson (https://blog.isquaredsoftware.com/)",
+ "Adrian Roselli (https://adrianroselli.com/)",
+ "Sara Soueidan (https://www.sarasoueidan.com/)",
+ "Scott O'Hara (https://www.scottohara.me/)",
+ "Marcy Sutton (https://www.marcy.codes/)",
+ "Léonie Watson (https://tink.uk/)",
+ "Lee Robinson (https://leerob.io/)"
  ]}
  ]
  }
