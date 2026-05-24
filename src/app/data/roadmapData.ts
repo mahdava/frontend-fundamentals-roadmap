@@ -627,9 +627,9 @@ export const stages: Stage[] = [
  sub: "The default habit that prevents a surprising number of architecture mistakes.",
  sections: [
  { h: "What matters here", items: [
- "Keep state as close as possible to the components that need it",
+ "**Keep state as close as possible to the components that need it**",
  "Lift state only when several components genuinely need to share it",
- "Global state is sometimes necessary, but it should not be the first instinct"
+ "**Global state is sometimes necessary**, but it should not be the first instinct"
  ]},
  { h: "Things worth asking", items: [
  "How do you decide where a piece of state should live?",
@@ -647,10 +647,10 @@ export const stages: Stage[] = [
  sub: "Context solves prop drilling, but it does not magically solve state design.",
  sections: [
  { h: "What matters here", items: [
- "Context broadcasts a value to a subtree",
+ "**Context broadcasts a value to a subtree**",
  "Every consumer re-renders when the context value changes",
  "It works best for low-frequency or stable values like theme, auth, or locale",
- "When everything goes into Context, performance and clarity both tend to suffer"
+ "**When everything goes into Context, performance and clarity both tend to suffer**"
  ]},
  { h: "Things worth asking", items: [
  "When is Context the right tool, and when is it not?",
@@ -667,10 +667,10 @@ export const stages: Stage[] = [
  sub: "Forms expose every weak spot in your state model.",
  sections: [
  { h: "What matters here", items: [
- "Controlled inputs keep the value in React state",
- "Uncontrolled inputs let the DOM keep the value until you need it",
+ "**Controlled inputs keep the value in React state**",
+ "**Uncontrolled inputs let the DOM keep the value until you need it**",
  "Validation can be eager, lazy, or hybrid",
- "Libraries like react-hook-form earn their keep once forms become genuinely non-trivial"
+ "**Libraries like react-hook-form earn their keep once forms become genuinely non-trivial**"
  ]},
  { h: "Things worth asking", items: [
  "When is uncontrolled good enough?",
@@ -707,8 +707,8 @@ export const stages: Stage[] = [
  sub: "These are not edge concerns. They are part of the interface.",
  sections: [
  { h: "What matters here", items: [
- "Error boundaries catch rendering errors in a subtree",
- "Suspense lets a subtree wait and show a fallback",
+ "**Error boundaries catch rendering errors in a subtree**",
+ "**Suspense lets a subtree wait and show a fallback**",
  "Good async UI depends on deciding where waiting and failure should surface"
  ]},
  { h: "Things worth asking", items: [
@@ -734,8 +734,8 @@ export const stages: Stage[] = [
  sections: [
  { h: "What matters here", items: [
  "Traditional React often ships large amounts of client JavaScript before the app feels ready",
- "Server components keep more work on the server and send less JavaScript to the browser",
- "The result can be a simpler client and a smaller performance bill"
+ "**Server components keep more work on the server and send less JavaScript to the browser**",
+ "**The result can be a simpler client and a smaller performance bill**"
  ]},
  { h: "Things worth asking", items: [
  "What was expensive about the all-client model?",
@@ -753,8 +753,8 @@ export const stages: Stage[] = [
  sub: "Server components and client components are not interchangeable, and that is the point.",
  sections: [
  { h: "What matters here", items: [
- "Server components can access backend resources directly but cannot use state, effects, or browser APIs",
- "Client components can use interactivity, browser APIs, and event handlers",
+ "**Server components can access backend resources directly but cannot use state, effects, or browser APIs**",
+ "**Client components can use interactivity, browser APIs, and event handlers**",
  "The split is about putting code in the environment where it makes the most sense"
  ]},
  { h: "Things worth asking", items: [
@@ -772,7 +772,7 @@ export const stages: Stage[] = [
  sub: "A small line with big consequences.",
  sections: [
  { h: "What matters here", items: [
- "use client marks a file and its imports as client-side code",
+ "**use client** marks a file and its imports as client-side code",
  "Moving the boundary too high pushes more code into the browser than you need",
  "Keeping the boundary low preserves the benefits of server-first rendering"
  ]},
@@ -810,7 +810,7 @@ export const stages: Stage[] = [
  sub: "One of the most practical benefits of the new model.",
  sections: [
  { h: "What matters here", items: [
- "The server can stream HTML in chunks instead of waiting for everything",
+ "**The server can stream HTML in chunks instead of waiting for everything**",
  "Suspense boundaries define what can wait and what should render now",
  "Good boundary placement changes perceived performance more than many micro-optimizations"
  ]},
@@ -836,9 +836,13 @@ export const stages: Stage[] = [
  sub: "Know both exist, learn the App Router first, and recognize older Pages Router patterns when you see them.",
  sections: [
  { h: "What matters here", items: [
- "The App Router is the modern default",
- "The Pages Router still appears in many older codebases",
- "They overlap in purpose, but not in mental model"
+ "**The App Router is the modern default**",
+ "The **Pages Router** still appears in many older codebases",
+ "**They overlap in purpose, but not in mental model**",
+ "The **App Router** is built around layouts, nested routing, server components, and streaming",
+ "The **Pages Router** is more page-based and client-oriented in how many developers first learned Next.js",
+ "One of the biggest benefits of the **App Router** is that data fetching, layouts, and server-first rendering fit together more naturally",
+ "Learning the **App Router** first gives you a better foundation for modern Next.js, even if you still need to recognize older Pages Router patterns"
  ]},
  { h: "Further reading", isResources: true, items: [
  "Next.js docs (https://nextjs.org/docs)",
