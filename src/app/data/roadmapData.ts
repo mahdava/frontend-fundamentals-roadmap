@@ -856,9 +856,9 @@ export const stages: Stage[] = [
  sub: "The filesystem is part of the framework API.",
  sections: [
  { h: "What matters here", items: [
- "page.tsx creates a route",
- "layout.tsx, loading.tsx, error.tsx, and not-found.tsx add structure and behavior",
- "Dynamic and catch-all segments shape URLs directly"
+ "**page.tsx** creates a route",
+ "**layout.tsx**, **loading.tsx**, **error.tsx**, and **not-found.tsx** add structure and behavior",
+ "**Dynamic and catch-all segments shape URLs directly**"
  ]},
  { h: "Things worth asking", items: [
  "How do nested layouts persist across navigations?",
@@ -875,9 +875,9 @@ export const stages: Stage[] = [
  sub: "Server components changed the default answer here.",
  sections: [
  { h: "What matters here", items: [
- "Server components can fetch directly",
+ "Server components *can* fetch directly",
  "Next.js extends fetch with caching and revalidation behavior",
- "Client-side fetching still matters for interactive or constantly changing data"
+ "**Client-side fetching still matters for interactive or constantly changing data**"
  ]},
  { h: "Things worth asking", items: [
  "When should data be fetched on the server rather than the client?",
@@ -894,9 +894,9 @@ export const stages: Stage[] = [
  sub: "The important thing is not memorizing acronyms, but understanding the tradeoffs.",
  sections: [
  { h: "What matters here", items: [
- "Static rendering is fast and cache-friendly",
+ "**Static rendering is fast and cache-friendly**",
  "Dynamic rendering trades cacheability for request-time freshness",
- "ISR sits in the middle with controlled revalidation"
+ "**ISR sits in the middle with controlled revalidation**"
  ]},
  { h: "Things worth asking", items: [
  "What makes a route dynamic rather than static?",
@@ -914,7 +914,7 @@ export const stages: Stage[] = [
  sections: [
  { h: "What matters here", items: [
  "Route handlers are API endpoints inside the app router",
- "Middleware runs before routing and can redirect, rewrite, or gate access",
+ "**Middleware runs before routing and can redirect, rewrite, or gate access**",
  "Choosing the wrong one usually means using the framework at the wrong layer"
  ]},
  { h: "Things worth asking", items: [
@@ -934,10 +934,13 @@ export const stages: Stage[] = [
  sections: [
  { h: "What matters here", items: [
  "Metadata APIs handle page-level SEO data",
- "next/image helps with responsive image performance",
- "next/font reduces layout shift and removes external font hosting friction"
+ "**next/image** helps with responsive image performance",
+ "**next/font** reduces layout shift and removes external font hosting friction"
  ]},
  { h: "Further reading", isResources: true, items: [
+ "Next.js - Metadata and OG images (https://nextjs.org/docs/app/building-your-application/optimizing/metadata)",
+ "Next.js - Image Optimization (https://nextjs.org/docs/app/building-your-application/optimizing/images)",
+ "Next.js - Font Optimization (https://nextjs.org/docs/app/building-your-application/optimizing/fonts)",
  "Next.js - Optimizing (https://nextjs.org/docs/app/building-your-application/optimizing)"
  ]}
  ]
@@ -950,13 +953,13 @@ export const stages: Stage[] = [
  desc: "These are the tools and practices that shape day-to-day frontend work: styling, accessibility, testing, client-side data fetching, and developer tooling. They are adjacent only in the sense that React does not own them, not because they matter less.",
  topics: [
  {
- title: "Styling and CSS architecture",
- hint: "Beyond just picking a library",
- sub: "The real question is how styles stay readable, consistent, and scalable as the app grows.",
+ title: "Tailwind and CSS fundamentals",
+ hint: "Utility classes still need a CSS brain",
+ sub: "Tailwind can make styling faster and more consistent, but it does not replace understanding how CSS works.",
  sections: [
  { h: "What matters here", items: [
  "You still need a CSS mental model even when using utility classes",
- "Tailwind optimizes speed and consistency, but it is not a substitute for understanding layout, specificity, and the cascade",
+ "**Tailwind optimizes speed and consistency, but it is not a substitute for understanding layout, specificity, and the cascade**",
  "Design tokens and naming discipline matter no matter which styling approach you pick"
  ]},
  { h: "Things worth asking", items: [
@@ -965,6 +968,9 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "Tailwind CSS docs (https://tailwindcss.com/docs)",
+ "Tailwind CSS - Utility-first fundamentals (https://tailwindcss.com/docs/styling-with-utility-classes)",
+ "MDN - CSS first steps (https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps)",
+ "MDN - Specificity (https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascade/Specificity)",
  "Josh Comeau - CSS for JavaScript Developers (https://www.joshwcomeau.com/)",
  "Refactoring UI (https://www.refactoringui.com/)"
  ]}
@@ -972,18 +978,19 @@ export const stages: Stage[] = [
  },
  {
  title: "Client-side data fetching",
- hint: "SWR and TanStack Query",
- sub: "When server components are not the answer, these tools usually are.",
+ hint: "Caching, revalidation, and mutations",
+ sub: "When server components are not the answer, client-side fetching tools can handle caching, refreshes, and mutations much more cleanly than ad-hoc effect code.",
  sections: [
  { h: "What matters here", items: [
- "These libraries maintain a client-side cache keyed by request identity",
+ "These tools maintain a client-side cache keyed by request identity",
  "They handle revalidation, background refreshes, and mutation flows far better than ad-hoc effect code",
  "They are often the right answer for interactive dashboards, optimistic UI, and user-driven refreshes"
  ]},
  { h: "Further reading", isResources: true, items: [
  "SWR docs (https://swr.vercel.app/)",
- "TanStack Query docs (https://tanstack.com/query/latest/docs/framework/react/overview)",
- "TkDodo - Practical React Query (https://tkdodo.eu/blog/practical-react-query)"
+ "RTK Query docs - Overview (https://redux-toolkit.js.org/rtk-query/overview)",
+ "RTK Query docs - Queries (https://redux-toolkit.js.org/rtk-query/usage/queries)",
+ "RTK Query docs - Mutations (https://redux-toolkit.js.org/rtk-query/usage/mutations)"
  ]}
  ]
  },
@@ -999,8 +1006,11 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "MDN - Accessibility (https://developer.mozilla.org/en-US/docs/Learn/Accessibility)",
+ "web.dev - Learn Accessibility (https://web.dev/learn/accessibility)",
  "WebAIM articles (https://webaim.org/articles/)",
- "web.dev - Learn Accessibility (https://web.dev/learn/accessibility)"
+ "WAI-ARIA Authoring Practices Guide (https://www.w3.org/WAI/ARIA/apg/)",
+ "A11Y Project - Checklist (https://www.a11yproject.com/checklist/)",
+ "Adrian Roselli (https://adrianroselli.com/)"
  ]}
  ]
  },
@@ -1011,8 +1021,9 @@ export const stages: Stage[] = [
  sections: [
  { h: "What matters here", items: [
  "React Testing Library encourages testing the UI the way a user experiences it",
+ "**Jest** is a common choice for unit and integration tests in JavaScript projects",
  "Mock at the network boundary rather than inside component internals whenever possible",
- "End-to-end tests matter, but only for critical paths"
+ "**Playwright** is a strong choice for end-to-end coverage of critical user flows"
  ]},
  { h: "Things worth asking", items: [
  "What counts as implementation-detail testing, and why does it become brittle?",
@@ -1020,6 +1031,8 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "Testing Library docs (https://testing-library.com/docs/)",
+ "Jest docs (https://jestjs.io/docs/getting-started)",
+ "Playwright docs (https://playwright.dev/docs/intro)",
  "Kent C. Dodds - The Testing Trophy (https://kentcdodds.com/blog/the-testing-trophy-and-testing-classifications)",
  "MSW docs (https://mswjs.io/docs)"
  ]}
@@ -1028,17 +1041,21 @@ export const stages: Stage[] = [
  {
  title: "Build tooling awareness",
  hint: "Enough to debug, not enough to obsess",
- sub: "You do not need to become a bundler expert, but you should know what the moving pieces are.",
+ sub: "You do not need to become a tooling expert, but you should be comfortable inspecting the browser, reading warnings, and using linting and formatting as part of the feedback loop.",
  sections: [
  { h: "What matters here", items: [
- "Bundlers and dev servers prepare browser-ready code",
- "Package managers shape installation, workspace structure, and sometimes team velocity",
- "Linters, formatters, and type checking are part of the feedback loop, not afterthoughts"
+ "**Chrome DevTools** is one of the most important debugging tools in frontend work",
+ "The browser inspector helps you understand layout, styles, network activity, performance, and runtime behavior",
+ "**ESLint** and formatters are part of the feedback loop, not afterthoughts"
  ]},
  { h: "Further reading", isResources: true, items: [
- "Vite guide (https://vitejs.dev/guide/)",
- "pnpm - Motivation (https://pnpm.io/motivation)",
- "Chrome DevTools docs (https://developer.chrome.com/docs/devtools/)"
+ "Chrome DevTools docs (https://developer.chrome.com/docs/devtools/)",
+ "Chrome DevTools - Inspect CSS grid and flexbox (https://developer.chrome.com/docs/devtools/css/grid)",
+ "Chrome DevTools - JavaScript debugging (https://developer.chrome.com/docs/devtools/javascript/)",
+ "Chrome DevTools - Network panel (https://developer.chrome.com/docs/devtools/network/)",
+ "Chrome DevTools - Performance panel (https://developer.chrome.com/docs/devtools/performance/)",
+ "ESLint docs (https://eslint.org/docs/latest/)",
+ "Prettier docs (https://prettier.io/docs/)"
  ]}
  ]
  }
