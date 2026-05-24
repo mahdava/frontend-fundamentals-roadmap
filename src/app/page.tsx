@@ -27,9 +27,13 @@ const Home = () => {
           <StageSection key={stage.id} stage={stage} activeKey={activeKey} onPinToggle={toggleTopic} />
         ))}
 
-        <footer className="border-t border-card-border/70 pt-6 text-sm text-muted">
+        <footer className="border-t border-card-border/70 pt-6 text-center text-sm text-muted">
           <p>
-            © lusse{" "}
+            Made with{" "}
+            <span role="img" aria-label="love">
+              ❤️
+            </span>
+            {" "}and AI vibes ©{" "}
             <Link href="https://oh-no.ooo" target="_blank" rel="noreferrer" aria-label="oh-no.ooo (opens in a new tab)">
               oh-no.ooo
             </Link>
