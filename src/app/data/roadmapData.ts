@@ -889,12 +889,13 @@ export const stages: Stage[] = [
  {
  title: "Data fetching",
  hint: "Fetch where the work belongs",
- sub: "Server components changed the default answer here.",
+ sub: "In modern Next.js, data fetching is no longer a separate concern bolted onto the app. It is part of the rendering model.",
  sections: [
  { h: "What matters here", items: [
- "Server components *can* fetch directly",
- "Next.js extends fetch with caching and revalidation behavior",
- "**Client-side fetching still matters for interactive or constantly changing data**"
+ "Server components often make server-side fetching the default answer",
+ "Next.js extends **fetch** with caching and revalidation behavior, so data fetching also becomes a rendering decision",
+ "**Client-side fetching still matters for interactive or constantly changing data**",
+ "The important question is not just where you *can* fetch, but where the data belongs and how fresh it needs to be"
  ]},
  { h: "Things worth asking", items: [
  "When should data be fetched on the server rather than the client?",
@@ -902,19 +903,21 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "Next.js - Data fetching, caching, and revalidating (https://nextjs.org/docs/app/building-your-application/data-fetching)",
- "Lee Robinson - Common mistakes with the Next.js App Router and how to fix them (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them#using-server-and-client-components-together)"
+ "Lee Robinson - Common mistakes with the Next.js App Router and how to fix them (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them#using-server-and-client-components-together)",
+ "Vercel - Understanding caching in the App Router (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them#assuming-fetch-is-never-cached)"
  ]}
  ]
  },
  {
  title: "Rendering modes",
  hint: "Static, dynamic, and in between",
- sub: "The important thing is not memorizing acronyms, but understanding the tradeoffs.",
+ sub: "The important thing is not memorizing acronyms, but understanding the tradeoffs between speed, freshness, and cacheability.",
  sections: [
  { h: "What matters here", items: [
- "**Static rendering is fast and cache-friendly**",
+ "**Static rendering is fast and cache-friendly** because the result can be prepared ahead of time",
  "Dynamic rendering trades cacheability for request-time freshness",
- "**ISR sits in the middle with controlled revalidation**"
+ "**ISR sits in the middle with controlled revalidation**",
+ "The real question is how fresh the page needs to be, and what performance tradeoff you are willing to make"
  ]},
  { h: "Things worth asking", items: [
  "What makes a route dynamic rather than static?",
@@ -922,7 +925,8 @@ export const stages: Stage[] = [
  ]},
  { h: "Further reading", isResources: true, items: [
  "Next.js - Rendering (https://nextjs.org/docs/app/building-your-application/rendering)",
- "Patterns.dev - Rendering Patterns (https://www.patterns.dev/react/render-props-pattern/)"
+ "Lee Robinson - Static vs Dynamic Rendering in the App Router (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them#misunderstanding-static-and-dynamic-rendering)",
+ "web.dev - Rendering on the Web (https://web.dev/rendering-on-the-web/)"
  ]}
  ]
  },
@@ -934,6 +938,7 @@ export const stages: Stage[] = [
  { h: "What matters here", items: [
  "Route handlers are API endpoints inside the app router",
  "**Middleware runs before routing and can redirect, rewrite, or gate access**",
+ "Middleware is not a general place for business logic, it is for work that needs to happen before the request reaches the route",
  "Choosing the wrong one usually means using the framework at the wrong layer"
  ]},
  { h: "Things worth asking", items: [
@@ -950,18 +955,20 @@ export const stages: Stage[] = [
  {
  title: "Metadata, images, and fonts",
  hint: "Built-in optimizations worth understanding",
- sub: "These are small pieces of the framework that have outsized practical impact.",
+ sub: "These are smaller parts of the framework, but they have a surprisingly large effect on performance, polish, and SEO.",
  sections: [
  { h: "What matters here", items: [
  "Metadata APIs handle page-level SEO data",
  "**next/image** helps with responsive image performance",
- "**next/font** reduces layout shift and removes external font hosting friction"
+ "**next/font** reduces layout shift and removes external font hosting friction",
+ "These features matter because they solve common production problems without asking you to build the plumbing yourself"
  ]},
  { h: "Further reading", isResources: true, items: [
  "Next.js - Metadata and OG images (https://nextjs.org/docs/app/building-your-application/optimizing/metadata)",
  "Next.js - Image Optimization (https://nextjs.org/docs/app/building-your-application/optimizing/images)",
  "Next.js - Font Optimization (https://nextjs.org/docs/app/building-your-application/optimizing/fonts)",
- "Next.js - Optimizing (https://nextjs.org/docs/app/building-your-application/optimizing)"
+ "Next.js - Optimizing (https://nextjs.org/docs/app/building-your-application/optimizing)",
+ "Vercel - Common mistakes with built-in Next.js features (https://vercel.com/blog/common-mistakes-with-the-next-js-app-router-and-how-to-fix-them#misusing-built-in-next-js-features)"
  ]}
  ]
  }
