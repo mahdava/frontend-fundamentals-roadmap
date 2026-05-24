@@ -1100,6 +1100,32 @@ export const stages: Stage[] = [
  "Why Prettier? (https://prettier.io/docs/why-prettier)"
  ]}
  ]
+ },
+ {
+ title: "AI as a learning and coding assistant",
+ hint: "Use it to accelerate, not to outsource understanding",
+ sub: "AI can help across every stage of this roadmap, but it is most useful when you use it to clarify concepts, inspect unfamiliar code, and practice better questions rather than blindly generating answers.",
+ sections: [
+ { h: "What matters here", items: [
+ "AI can help explain unfamiliar syntax, React patterns, and framework concepts in simpler language",
+ "It is useful for turning error messages, type errors, and confusing code paths into something easier to reason about",
+ "It can help you compare approaches, draft examples, and generate small experiments when you are learning a new concept",
+ "It becomes much more valuable when you already know enough to question the answer, verify it, and ask for something more precise"
+ ]},
+ { h: "Things worth asking", items: [
+ "How do you use AI to understand a concept instead of just copying a solution?",
+ "What kinds of mistakes should you expect AI to make in React, Next.js, TypeScript, or accessibility work?",
+ "How can AI help you debug, write tests, or inspect performance without becoming a crutch?"
+ ]},
+ { h: "Further reading", isResources: true, items: [
+ "OpenAI - Prompting guide (https://platform.openai.com/docs/guides/prompt-engineering)",
+ "Anthropic - Prompt engineering overview (https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)",
+ "Simon Willison - Things we learned about LLMs in 2024 (https://simonwillison.net/2024/Dec/31/llms-in-2024/)",
+ "Simon Willison - Prompt injection and data exfiltration in LLM-powered applications (https://simonwillison.net/2024/Jun/6/prompt-injection/)",
+ "Kent C. Dodds - Use AI as a senior pair programmer, not a replacement for thinking (https://www.epicreact.dev/)",
+ "Josh W. Comeau - How I use AI (https://www.joshwcomeau.com/blog/)"
+ ]}
+ ]
  }
  ]
  }
