@@ -1126,6 +1126,29 @@ export const stages: Stage[] = [
  "Ethan Mollick - My approach to using AI (https://www.oneusefulthing.org/p/my-ai-skeptic-friends-are-all-nuts)"
  ]}
  ]
+ },
+ {
+ title: "People to follow",
+ hint: "Good teachers shorten the learning curve",
+ sub: "A few strong voices can make the frontend world feel much less noisy. The goal is not to follow everyone, but to find teachers whose explanations make difficult ideas click.",
+ sections: [
+ { h: "What matters here", items: [
+ "Different people are useful for different things: React mental models, CSS, TypeScript, performance, accessibility, or keeping up with the ecosystem",
+ "Following a few thoughtful educators is often more useful than trying to consume everything at once",
+ "Good teachers do more than share tips, they help you build taste, vocabulary, and better instincts"
+ ]},
+ { h: "Further reading", isResources: true, items: [
+ "Fireship (https://www.youtube.com/@Fireship)",
+ "Web Dev Simplified (https://www.youtube.com/@WebDevSimplified)",
+ "Kent C. Dodds (https://kentcdodds.com/)",
+ "Dan Abramov (https://overreacted.io/)",
+ "Josh W. Comeau (https://www.joshwcomeau.com/)",
+ "TkDodo (https://tkdodo.eu/blog)",
+ "Mark Erikson (https://blog.isquaredsoftware.com/)",
+ "Adrian Roselli (https://adrianroselli.com/)",
+ "Lee Robinson (https://leerob.io/)"
+ ]}
+ ]
  }
  ]
  }
