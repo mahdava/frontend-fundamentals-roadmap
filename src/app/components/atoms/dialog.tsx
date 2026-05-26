@@ -12,6 +12,7 @@ export interface DialogProps {
   description?: ReactNode;
   children: ReactNode;
   closeLabel?: string;
+  onCloseAutoFocus?: (event: Event) => void;
 }
 
 export const Dialog = ({
@@ -21,12 +22,14 @@ export const Dialog = ({
   description,
   children,
   closeLabel = "Close dialog",
+  onCloseAutoFocus,
 }: DialogProps) => {
   return (
     <RadixDialog.Root open={open} onOpenChange={onOpenChange}>
       <RadixDialog.Portal>
         <RadixDialog.Overlay className="fixed inset-0 z-[120] bg-black/40 backdrop-blur-[2px] data-[state=open]:animate-in data-[state=closed]:animate-out" />
         <RadixDialog.Content
+          onCloseAutoFocus={onCloseAutoFocus}
           className={twMerge(
             "fixed z-[130] flex max-h-[min(85vh,720px)] w-[min(680px,calc(100vw-32px))] flex-col overflow-hidden rounded-[22px] border border-card-border bg-card shadow-card-lg outline-none",
             "left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2",

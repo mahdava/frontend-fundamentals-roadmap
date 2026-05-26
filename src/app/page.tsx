@@ -9,7 +9,7 @@ import { useTopicDialog } from "./hooks/useTopicDialog";
 import { focusClass } from "./lib/focusClass";
 
 const Home = () => {
-  const { selectedTopic, activeKey, toggleTopic, closeDialog } = useTopicDialog();
+  const { selectedTopic, activeKey, setButtonRef, toggleTopic, closeDialog, restoreFocusToTrigger } = useTopicDialog();
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
@@ -24,7 +24,13 @@ const Home = () => {
 
       <main id="main" className="mx-auto max-w-[980px] px-6 pb-20 pt-4">
         {stages.map((stage) => (
-          <StageSection key={stage.id} stage={stage} activeKey={activeKey} onPinToggle={toggleTopic} />
+          <StageSection
+            key={stage.id}
+            stage={stage}
+            activeKey={activeKey}
+            setButtonRef={setButtonRef}
+            onPinToggle={toggleTopic}
+          />
         ))}
 
         <footer className="border-t border-card-border/70 pt-6 text-center text-sm text-muted">
@@ -42,7 +48,12 @@ const Home = () => {
       </main>
 
       {selectedTopic ? (
-        <TopicDetailsDialog topic={selectedTopic.topic} open onOpenChange={(open) => !open && closeDialog()} />
+        <TopicDetailsDialog
+          topic={selectedTopic.topic}
+          open
+          onOpenChange={(open) => !open && closeDialog()}
+          onCloseAutoFocus={restoreFocusToTrigger}
+        />
       ) : null}
     </div>
   );

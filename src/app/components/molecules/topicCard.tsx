@@ -6,17 +6,18 @@ export interface TopicCardProps {
   topic: Topic;
   topicKey: string;
   isPinned: boolean;
+  setButtonRef: (key: string, node: HTMLButtonElement | null) => void;
   onPinToggle: (key: string, topic: Topic) => void;
 }
 
-export const TopicCard = ({ topic, topicKey, isPinned, onPinToggle }: TopicCardProps) => {
+export const TopicCard = ({ topic, topicKey, isPinned, setButtonRef, onPinToggle }: TopicCardProps) => {
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     onPinToggle(topicKey, topic);
   };
 
   return (
-    <CardButton isPinned={isPinned} onClick={handleClick}>
+    <CardButton ref={(node) => setButtonRef(topicKey, node)} isPinned={isPinned} onClick={handleClick}>
       {isPinned && (
         <span className="absolute right-4 top-4 rounded-full bg-accent-soft px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-accent">
           Open
