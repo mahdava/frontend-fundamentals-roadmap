@@ -9,7 +9,7 @@ import { useTopicDialog } from "./hooks/useTopicDialog";
 import { focusClass } from "./lib/focusClass";
 
 const Home = () => {
-  const { selectedTopic, activeKey, setButtonRef, toggleTopic, closeDialog } = useTopicDialog();
+  const { selectedTopic, activeKey, setButtonRef, toggleTopic, closeDialog, restoreFocusToTrigger } = useTopicDialog();
 
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
@@ -48,7 +48,12 @@ const Home = () => {
       </main>
 
       {selectedTopic ? (
-        <TopicDetailsDialog topic={selectedTopic.topic} open onOpenChange={(open) => !open && closeDialog()} />
+        <TopicDetailsDialog
+          topic={selectedTopic.topic}
+          open
+          onOpenChange={(open) => !open && closeDialog()}
+          onCloseAutoFocus={restoreFocusToTrigger}
+        />
       ) : null}
     </div>
   );

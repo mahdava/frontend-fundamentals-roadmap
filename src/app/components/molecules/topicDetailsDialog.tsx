@@ -9,14 +9,16 @@ export interface TopicDetailsDialogProps {
   topic: Topic;
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  onCloseAutoFocus?: (event: Event) => void;
 }
 
-export const TopicDetailsDialog = ({ topic, open, onOpenChange }: TopicDetailsDialogProps) => {
+export const TopicDetailsDialog = ({ topic, open, onOpenChange, onCloseAutoFocus }: TopicDetailsDialogProps) => {
   return (
     <Dialog
       open={open}
       onOpenChange={onOpenChange}
       closeLabel="Close topic details"
+      onCloseAutoFocus={onCloseAutoFocus}
       title={
         <Typography component="h3" variant="headingSm" tone="accent" className="mb-1">
           {topic.title}

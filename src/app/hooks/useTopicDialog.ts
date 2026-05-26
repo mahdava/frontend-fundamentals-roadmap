@@ -12,6 +12,7 @@ export interface UseTopicDialogResult {
   setButtonRef: (key: string, node: HTMLButtonElement | null) => void;
   toggleTopic: (key: string, topic: Topic) => void;
   closeDialog: () => void;
+  restoreFocusToTrigger: (event: Event) => void;
 }
 
 export function useTopicDialog(): UseTopicDialogResult {
@@ -23,10 +24,16 @@ export function useTopicDialog(): UseTopicDialogResult {
   };
 
   const closeDialog = () => {
+    setSelectedTopic(null);
+  };
+
+  const restoreFocusToTrigger = (event: Event) => {
     const activeButton = selectedTopic ? buttonRefs.current[selectedTopic.key] : null;
 
-    setSelectedTopic(null);
-    activeButton?.focus();
+    if (!activeButton) return;
+
+    event.preventDefault();
+    activeButton.focus();
   };
 
   const toggleTopic = (key: string, topic: Topic) => {
@@ -44,5 +51,6 @@ export function useTopicDialog(): UseTopicDialogResult {
     setButtonRef,
     toggleTopic,
     closeDialog,
+    restoreFocusToTrigger,
   };
 }
