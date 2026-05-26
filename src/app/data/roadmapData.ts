@@ -196,7 +196,7 @@ export const stages: Stage[] = [
  { h: "Further reading", isResources: true, items: [
  "React docs - Keeping Components Pure (https://react.dev/learn/keeping-components-pure)",
  "Mostly Adequate Guide to FP - Ch 1-3 (https://github.com/MostlyAdequate/mostly-adequate-guide)",
- "Composing Software - Eric Elliott (https://medium.com/javascript-scene/composing-software-an-introduction-7f05d2b36d1d)"
+ "React docs - Composition vs Inheritance (https://legacy.reactjs.org/docs/composition-vs-inheritance.html)"
  ]}
  ]
  },
