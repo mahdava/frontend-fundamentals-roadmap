@@ -7,10 +7,11 @@ import { TopicCard } from "../molecules/topicCard";
 export interface StageSectionProps {
   stage: Stage;
   activeKey: string | null;
+  setButtonRef: (key: string, node: HTMLButtonElement | null) => void;
   onPinToggle: (key: string, topic: Topic) => void;
 }
 
-export const StageSection = ({ stage, activeKey, onPinToggle }: StageSectionProps) => {
+export const StageSection = ({ stage, activeKey, setButtonRef, onPinToggle }: StageSectionProps) => {
   const { id, anchor, tag, title, desc, topics } = stage;
 
   return (
@@ -28,7 +29,14 @@ export const StageSection = ({ stage, activeKey, onPinToggle }: StageSectionProp
         {topics.map((topic) => {
           const topicKey = `${id}-${topic.title}`;
           return (
-            <TopicCard key={topicKey} topic={topic} topicKey={topicKey} isPinned={activeKey === topicKey} onPinToggle={onPinToggle} />
+            <TopicCard
+              key={topicKey}
+              topic={topic}
+              topicKey={topicKey}
+              isPinned={activeKey === topicKey}
+              setButtonRef={setButtonRef}
+              onPinToggle={onPinToggle}
+            />
           );
         })}
       </div>
